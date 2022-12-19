@@ -53,7 +53,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `dataSrcLabel` (`string`): The name label of the block.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_route.timeouts.new](#fn-hvn_routetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new data source into the root Terraform configuration.
@@ -69,7 +69,7 @@ newAttrs()
 `hcp.data.hvn_route.newAttrs` constructs a new object with attributes and blocks configured for the `hvn_route`
 Terraform data source.
 
-Unlike [hcp.data.hvn_route.new](#fn-hvn_routenew), this function will not inject the `data source`
+Unlike [hcp.data.hvn_route.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 
@@ -79,7 +79,7 @@ injecting into a complete block.
 **Args**:
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_route.timeouts.new](#fn-hvn_routetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `hvn_route` data source into the root Terraform configuration.

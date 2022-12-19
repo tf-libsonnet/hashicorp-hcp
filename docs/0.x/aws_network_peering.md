@@ -59,7 +59,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `peer_vpc_id` (`string`): The ID of the peer VPC in AWS.
   - `peer_vpc_region` (`string`): The region of the peer VPC in AWS.
   - `peering_id` (`string`): The ID of the network peering.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_network_peering.timeouts.new](#fn-aws_network_peeringtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -75,7 +75,7 @@ newAttrs()
 `hcp.aws_network_peering.newAttrs` constructs a new object with attributes and blocks configured for the `aws_network_peering`
 Terraform resource.
 
-Unlike [hcp.aws_network_peering.new](#fn-aws_network_peeringnew), this function will not inject the `resource`
+Unlike [hcp.aws_network_peering.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -88,7 +88,7 @@ injecting into a complete block.
   - `peer_vpc_id` (`string`): The ID of the peer VPC in AWS.
   - `peer_vpc_region` (`string`): The region of the peer VPC in AWS.
   - `peering_id` (`string`): The ID of the network peering.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_network_peering.timeouts.new](#fn-aws_network_peeringtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `aws_network_peering` resource into the root Terraform configuration.

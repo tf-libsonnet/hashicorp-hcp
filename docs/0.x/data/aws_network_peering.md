@@ -55,7 +55,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
   - `peering_id` (`string`): The ID of the network peering.
   - `wait_for_active_state` (`bool`): If `true`, Terraform will wait for the network peering to reach an `ACTIVE` state before continuing. Default `false`. When `null`, the `wait_for_active_state` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_network_peering.timeouts.new](#fn-aws_network_peeringtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new data source into the root Terraform configuration.
@@ -71,7 +71,7 @@ newAttrs()
 `hcp.data.aws_network_peering.newAttrs` constructs a new object with attributes and blocks configured for the `aws_network_peering`
 Terraform data source.
 
-Unlike [hcp.data.aws_network_peering.new](#fn-aws_network_peeringnew), this function will not inject the `data source`
+Unlike [hcp.data.aws_network_peering.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 
@@ -82,7 +82,7 @@ injecting into a complete block.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
   - `peering_id` (`string`): The ID of the network peering.
   - `wait_for_active_state` (`bool`): If `true`, Terraform will wait for the network peering to reach an `ACTIVE` state before continuing. Default `false`. When `null`, the `wait_for_active_state` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_network_peering.timeouts.new](#fn-aws_network_peeringtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `aws_network_peering` data source into the root Terraform configuration.

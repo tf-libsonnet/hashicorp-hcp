@@ -53,7 +53,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `dataSrcLabel` (`string`): The name label of the block.
   - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket to pull from.
   - `channel` (`string`): The channel that points to the version of the image you want.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image_iteration.timeouts.new](#fn-packer_image_iterationtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image_iteration.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new data source into the root Terraform configuration.
@@ -69,7 +69,7 @@ newAttrs()
 `hcp.data.packer_image_iteration.newAttrs` constructs a new object with attributes and blocks configured for the `packer_image_iteration`
 Terraform data source.
 
-Unlike [hcp.data.packer_image_iteration.new](#fn-packer_image_iterationnew), this function will not inject the `data source`
+Unlike [hcp.data.packer_image_iteration.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 
@@ -79,7 +79,7 @@ injecting into a complete block.
 **Args**:
   - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket to pull from.
   - `channel` (`string`): The channel that points to the version of the image you want.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image_iteration.timeouts.new](#fn-packer_image_iterationtimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image_iteration.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `packer_image_iteration` data source into the root Terraform configuration.

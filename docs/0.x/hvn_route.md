@@ -57,7 +57,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
   - `target_link` (`string`): A unique URL identifying the target of the HVN route. Examples of the target: [`aws_network_peering`](aws_network_peering.md), [`aws_transit_gateway_attachment`](aws_transit_gateway_attachment.md)
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-hvn_routetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -73,7 +73,7 @@ newAttrs()
 `hcp.hvn_route.newAttrs` constructs a new object with attributes and blocks configured for the `hvn_route`
 Terraform resource.
 
-Unlike [hcp.hvn_route.new](#fn-hvn_routenew), this function will not inject the `resource`
+Unlike [hcp.hvn_route.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -85,7 +85,7 @@ injecting into a complete block.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
   - `target_link` (`string`): A unique URL identifying the target of the HVN route. Examples of the target: [`aws_network_peering`](aws_network_peering.md), [`aws_transit_gateway_attachment`](aws_transit_gateway_attachment.md)
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-hvn_routetimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `hvn_route` resource into the root Terraform configuration.
