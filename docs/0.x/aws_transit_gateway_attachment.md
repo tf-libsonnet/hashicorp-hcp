@@ -57,7 +57,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resource_share_arn` (`string`): The Amazon Resource Name (ARN) of the Resource Share that is needed to grant HCP access to the transit gateway in AWS. The Resource Share should be associated with the HCP AWS account principal (see [aws_ram_principal_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association)) and the transit gateway resource (see [aws_ram_resource_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_resource_association))
   - `transit_gateway_attachment_id` (`string`): The user-settable name of the transit gateway attachment in HCP.
   - `transit_gateway_id` (`string`): The ID of the user-owned transit gateway in AWS. The AWS region of the transit gateway must match the HVN.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_transit_gateway_attachment.timeouts.new](#fn-awstransitgatewayattachmenttimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_transit_gateway_attachment.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new resource into the root Terraform configuration.
@@ -73,7 +73,7 @@ newAttrs()
 `hcp.aws_transit_gateway_attachment.newAttrs` constructs a new object with attributes and blocks configured for the `aws_transit_gateway_attachment`
 Terraform resource.
 
-Unlike [hcp.aws_transit_gateway_attachment.new](#fn-awstransitgatewayattachmentnew), this function will not inject the `resource`
+Unlike [hcp.aws_transit_gateway_attachment.new](#fn-new), this function will not inject the `resource`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) function to build a complete block.
 
@@ -85,7 +85,7 @@ injecting into a complete block.
   - `resource_share_arn` (`string`): The Amazon Resource Name (ARN) of the Resource Share that is needed to grant HCP access to the transit gateway in AWS. The Resource Share should be associated with the HCP AWS account principal (see [aws_ram_principal_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association)) and the transit gateway resource (see [aws_ram_resource_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_resource_association))
   - `transit_gateway_attachment_id` (`string`): The user-settable name of the transit gateway attachment in HCP.
   - `transit_gateway_id` (`string`): The ID of the user-owned transit gateway in AWS. The AWS region of the transit gateway must match the HVN.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_transit_gateway_attachment.timeouts.new](#fn-awstransitgatewayattachmenttimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_transit_gateway_attachment.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `aws_transit_gateway_attachment` resource into the root Terraform configuration.
