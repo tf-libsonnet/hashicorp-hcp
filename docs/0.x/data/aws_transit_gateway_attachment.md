@@ -55,7 +55,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
   - `transit_gateway_attachment_id` (`string`): The user-settable name of the transit gateway attachment in HCP.
   - `wait_for_active_state` (`bool`): If `true`, Terraform will wait for the transit gateway attachment to reach an `ACTIVE` state before continuing. Default `false`. When `null`, the `wait_for_active_state` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_transit_gateway_attachment.timeouts.new](#fn-awstransitgatewayattachmenttimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_transit_gateway_attachment.timeouts.new](#fn-aws_transit_gateway_attachmenttimeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new data source into the root Terraform configuration.
@@ -71,7 +71,7 @@ newAttrs()
 `hcp.data.aws_transit_gateway_attachment.newAttrs` constructs a new object with attributes and blocks configured for the `aws_transit_gateway_attachment`
 Terraform data source.
 
-Unlike [hcp.data.aws_transit_gateway_attachment.new](#fn-awstransitgatewayattachmentnew), this function will not inject the `data source`
+Unlike [hcp.data.aws_transit_gateway_attachment.new](#fn-aws_transit_gateway_attachmentnew), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 
@@ -82,7 +82,7 @@ injecting into a complete block.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
   - `transit_gateway_attachment_id` (`string`): The user-settable name of the transit gateway attachment in HCP.
   - `wait_for_active_state` (`bool`): If `true`, Terraform will wait for the transit gateway attachment to reach an `ACTIVE` state before continuing. Default `false`. When `null`, the `wait_for_active_state` field will be omitted from the resulting object.
-  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_transit_gateway_attachment.timeouts.new](#fn-awstransitgatewayattachmenttimeoutsnew) constructor.
+  - `timeouts` (`obj`):  When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_transit_gateway_attachment.timeouts.new](#fn-aws_transit_gateway_attachmenttimeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `aws_transit_gateway_attachment` data source into the root Terraform configuration.
