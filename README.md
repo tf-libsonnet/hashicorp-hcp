@@ -23,3 +23,71 @@ This repository contains [Jsonnet](https://jsonnet.org/) functions for generatin
 >
 > If you would like to contribute a change, you may open a Pull Request with a suggested change, but please note that it
 > will **not be merged in until the necessary updates have been made to the generator**.
+
+## Usage
+
+Install the package using [jsonnet-bundler](https://github.com/jsonnet-bundler/jsonnet-bundler):
+
+```
+jb install github.com/tf-libsonnet/hashicorp-hcp@main
+
+# Or if you want to install a specific release
+#   jb install github.com/tf-libsonnet/hashicorp-hcp@v0.0.1
+# Or if you want to install bindings for a specific provider major version series
+#   jb install github.com/tf-libsonnet/hashicorp-hcp/0.x@main
+```
+
+You can then import the package in your Jsonnet code:
+
+```jsonnet
+// main.tf.json.jsonnet
+local hcp = import 'github.com/tf-libsonnet/hashicorp-hcp/main.libsonnet';
+
+hcp.provider.new(src='hashicorp/hcp')
++ hcp.hvn.new(
+  'example',
+  hvn_id='main-hvn',
+  cloud_provider='aws',
+  region='us-west-2',
+  cidr_block='172.25.16.0/20',
+)
+```
+
+This will generate the following Terraform JSON :
+
+```json
+{
+   "provider": {
+      "hcp": [
+         { }
+      ]
+   },
+   "resource": {
+      "hcp_hvn": {
+         "example": {
+            "cidr_block": "172.25.16.0/20",
+            "cloud_provider": "aws",
+            "hvn_id": "main-hvn",
+            "region": "us-west-2"
+         }
+      }
+   },
+   "terraform": {
+      "required_providers": {
+         "hcp": {
+            "source": "hashicorp/hcp"
+         }
+      }
+   }
+}
+```
+
+Refer to the [reference docs](/docs/0.x/README.md) for a list of supported data sources and resources:
+
+- [provider config](/docs/0.x/provider.md)
+- [resources](/docs/0.x/README.md)
+- [data sources](/docs/0.x/data/index.md)
+
+## Contributing
+
+Refer to the [CONTRIBUTING.md](/CONTRIBUTING.md) document for information on how to contribute to `tf.libsonnet`.
