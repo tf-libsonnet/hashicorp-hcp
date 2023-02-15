@@ -22,6 +22,7 @@ project.
 * [hvn](hvn.md)
 * [hvn_peering_connection](hvn_peering_connection.md)
 * [hvn_route](hvn_route.md)
+* [packer_channel](packer_channel.md)
 * [provider](provider.md)
 * [vault_cluster](vault_cluster.md)
 * [vault_cluster_admin_token](vault_cluster_admin_token.md)
