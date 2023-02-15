@@ -12,6 +12,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   hvn: (import 'resources/hvn.libsonnet'),
   hvn_peering_connection: (import 'resources/hvn_peering_connection.libsonnet'),
   hvn_route: (import 'resources/hvn_route.libsonnet'),
+  packer_channel: (import 'resources/packer_channel.libsonnet'),
   vault_cluster: (import 'resources/vault_cluster.libsonnet'),
   vault_cluster_admin_token: (import 'resources/vault_cluster_admin_token.libsonnet'),
   data: (import 'data/main.libsonnet'),
