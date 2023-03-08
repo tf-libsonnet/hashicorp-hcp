@@ -20,6 +20,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withConnectEnabled()`](#fn-withconnectenabled)
 * [`fn withDatacenter()`](#fn-withdatacenter)
 * [`fn withHvnId()`](#fn-withhvnid)
+* [`fn withIpAllowlist()`](#fn-withipallowlist)
+* [`fn withIpAllowlistMixin()`](#fn-withipallowlistmixin)
 * [`fn withMinConsulVersion()`](#fn-withminconsulversion)
 * [`fn withPrimaryLink()`](#fn-withprimarylink)
 * [`fn withPublicEndpoint()`](#fn-withpublicendpoint)
@@ -27,6 +29,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTier()`](#fn-withtier)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`obj ip_allowlist`](#obj-ip_allowlist)
+  * [`fn new()`](#fn-ip_allowlistnew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -69,6 +73,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint for the Consul UI. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `size` (`string`): The t-shirt size representation of each server VM that this Consul cluster is provisioned with. Valid option for development tier - `x_small`. Valid options for other tiers - `small`, `medium`, `large`. For more details - https://cloud.hashicorp.com/pricing/consul. Upgrading the size of a cluster after creation is allowed. When `null`, the `size` field will be omitted from the resulting object.
   - `tier` (`string`): The tier that the HCP Consul cluster will be provisioned as.  Only `development`, `standard` and `plus` are available at this time. See [pricing information](https://cloud.hashicorp.com/pricing/consul).
+  - `ip_allowlist` (`list[obj]`): Allowed IPV4 address ranges (CIDRs) for inbound traffic. Each entry must be a unique CIDR. Maximum 3 CIDRS supported at this time. When `null`, the `ip_allowlist` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.consul_cluster.ip_allowlist.new](#fn-ip_allowlistnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.consul_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -103,6 +108,7 @@ injecting into a complete block.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint for the Consul UI. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `size` (`string`): The t-shirt size representation of each server VM that this Consul cluster is provisioned with. Valid option for development tier - `x_small`. Valid options for other tiers - `small`, `medium`, `large`. For more details - https://cloud.hashicorp.com/pricing/consul. Upgrading the size of a cluster after creation is allowed. When `null`, the `size` field will be omitted from the resulting object.
   - `tier` (`string`): The tier that the HCP Consul cluster will be provisioned as.  Only `development`, `standard` and `plus` are available at this time. See [pricing information](https://cloud.hashicorp.com/pricing/consul).
+  - `ip_allowlist` (`list[obj]`): Allowed IPV4 address ranges (CIDRs) for inbound traffic. Each entry must be a unique CIDR. Maximum 3 CIDRS supported at this time. When `null`, the `ip_allowlist` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.consul_cluster.ip_allowlist.new](#fn-ip_allowlistnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.consul_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -187,6 +193,43 @@ Terraform resource block to set or update the hvn_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `hvn_id` field.
+
+
+### fn withIpAllowlist
+
+```ts
+withIpAllowlist()
+```
+
+`hcp.list[obj].withIpAllowlist` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the ip_allowlist field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [hcp.list[obj].withIpAllowlistMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `ip_allowlist` field.
+
+
+### fn withIpAllowlistMixin
+
+```ts
+withIpAllowlistMixin()
+```
+
+`hcp.list[obj].withIpAllowlistMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the ip_allowlist field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [hcp.list[obj].withIpAllowlist](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `ip_allowlist` field.
 
 
 ### fn withMinConsulVersion
@@ -303,6 +346,30 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+## obj ip_allowlist
+
+
+
+### fn ip_allowlist.new
+
+```ts
+new()
+```
+
+
+`hcp.consul_cluster.ip_allowlist.new` constructs a new object with attributes and blocks configured for the `ip_allowlist`
+Terraform sub block.
+
+
+
+**Args**:
+  - `address` (`string`): IP address range in CIDR notation.
+  - `description` (`string`): Description to help identify source (maximum 255 chars). When `null`, the `description` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `ip_allowlist` sub block.
 
 
 ## obj timeouts
