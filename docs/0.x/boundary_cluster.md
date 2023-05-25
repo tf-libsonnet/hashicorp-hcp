@@ -17,6 +17,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withClusterId()`](#fn-withclusterid)
 * [`fn withPassword()`](#fn-withpassword)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withUsername()`](#fn-withusername)
@@ -54,6 +55,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `cluster_id` (`string`): The ID of the Boundary cluster
   - `password` (`string`): The password of the initial admin user. This must be at least 8 characters in length. Note that this may show up in logs, and it will be stored in the state file.
+  - `project_id` (`string`): The ID of the HCP project where the Boundary cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `username` (`string`): The username of the initial admin user. This must be at least 3 characters in length, alphanumeric, hyphen, or period.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -81,6 +83,7 @@ injecting into a complete block.
 **Args**:
   - `cluster_id` (`string`): The ID of the Boundary cluster
   - `password` (`string`): The password of the initial admin user. This must be at least 8 characters in length. Note that this may show up in logs, and it will be stored in the state file.
+  - `project_id` (`string`): The ID of the HCP project where the Boundary cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `username` (`string`): The username of the initial admin user. This must be at least 3 characters in length, alphanumeric, hyphen, or period.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -118,6 +121,22 @@ Terraform resource block to set or update the password field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `password` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withTimeouts

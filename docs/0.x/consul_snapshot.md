@@ -16,6 +16,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withClusterId()`](#fn-withclusterid)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withSnapshotName()`](#fn-withsnapshotname)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
@@ -52,6 +53,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `cluster_id` (`string`): The ID of the HCP Consul cluster.
+  - `project_id` (`string`): The ID of the HCP project where the HCP Consul cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `snapshot_name` (`string`): The name of the snapshot.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.consul_snapshot.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -78,6 +80,7 @@ injecting into a complete block.
 
 **Args**:
   - `cluster_id` (`string`): The ID of the HCP Consul cluster.
+  - `project_id` (`string`): The ID of the HCP project where the HCP Consul cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `snapshot_name` (`string`): The name of the snapshot.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.consul_snapshot.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -99,6 +102,22 @@ Terraform resource block to set or update the cluster_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `cluster_id` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withSnapshotName

@@ -24,6 +24,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withIpAllowlistMixin()`](#fn-withipallowlistmixin)
 * [`fn withMinConsulVersion()`](#fn-withminconsulversion)
 * [`fn withPrimaryLink()`](#fn-withprimarylink)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withPublicEndpoint()`](#fn-withpublicendpoint)
 * [`fn withSize()`](#fn-withsize)
 * [`fn withTier()`](#fn-withtier)
@@ -70,6 +71,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `hvn_id` (`string`): The ID of the HVN this HCP Consul cluster is associated to.
   - `min_consul_version` (`string`): The minimum Consul patch version of the cluster. Allows only the rightmost version component to increment (E.g: `1.13.0` will allow installation of `1.13.2` and `1.13.3` etc., but not `1.14.0`). If not specified, it is defaulted to the version that is currently recommended by HCP. When `null`, the `min_consul_version` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Consul cluster which is the primary in the federation setup with this HCP Consul cluster. If not specified, it is a standalone cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HCP Consul cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint for the Consul UI. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `size` (`string`): The t-shirt size representation of each server VM that this Consul cluster is provisioned with. Valid option for development tier - `x_small`. Valid options for other tiers - `small`, `medium`, `large`. For more details - https://cloud.hashicorp.com/pricing/consul. Upgrading the size of a cluster after creation is allowed. When `null`, the `size` field will be omitted from the resulting object.
   - `tier` (`string`): The tier that the HCP Consul cluster will be provisioned as.  Only `development`, `standard` and `plus` are available at this time. See [pricing information](https://www.hashicorp.com/products/consul/pricing).
@@ -105,6 +107,7 @@ injecting into a complete block.
   - `hvn_id` (`string`): The ID of the HVN this HCP Consul cluster is associated to.
   - `min_consul_version` (`string`): The minimum Consul patch version of the cluster. Allows only the rightmost version component to increment (E.g: `1.13.0` will allow installation of `1.13.2` and `1.13.3` etc., but not `1.14.0`). If not specified, it is defaulted to the version that is currently recommended by HCP. When `null`, the `min_consul_version` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Consul cluster which is the primary in the federation setup with this HCP Consul cluster. If not specified, it is a standalone cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HCP Consul cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint for the Consul UI. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `size` (`string`): The t-shirt size representation of each server VM that this Consul cluster is provisioned with. Valid option for development tier - `x_small`. Valid options for other tiers - `small`, `medium`, `large`. For more details - https://cloud.hashicorp.com/pricing/consul. Upgrading the size of a cluster after creation is allowed. When `null`, the `size` field will be omitted from the resulting object.
   - `tier` (`string`): The tier that the HCP Consul cluster will be provisioned as.  Only `development`, `standard` and `plus` are available at this time. See [pricing information](https://www.hashicorp.com/products/consul/pricing).
@@ -262,6 +265,22 @@ Terraform resource block to set or update the primary_link field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `primary_link` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withPublicEndpoint

@@ -18,6 +18,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withCidrBlock()`](#fn-withcidrblock)
 * [`fn withCloudProvider()`](#fn-withcloudprovider)
 * [`fn withHvnId()`](#fn-withhvnid)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withRegion()`](#fn-withregion)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
@@ -56,6 +57,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `cidr_block` (`string`): The CIDR range of the HVN. If this is not provided, the service will provide a default value. When `null`, the `cidr_block` field will be omitted from the resulting object.
   - `cloud_provider` (`string`): The provider where the HVN is located. The provider &#39;aws&#39; is generally available and &#39;azure&#39; is in public beta.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
+  - `project_id` (`string`): The ID of the HCP project where the HVN is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `region` (`string`): The region where the HVN is located.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -84,6 +86,7 @@ injecting into a complete block.
   - `cidr_block` (`string`): The CIDR range of the HVN. If this is not provided, the service will provide a default value. When `null`, the `cidr_block` field will be omitted from the resulting object.
   - `cloud_provider` (`string`): The provider where the HVN is located. The provider &#39;aws&#39; is generally available and &#39;azure&#39; is in public beta.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
+  - `project_id` (`string`): The ID of the HCP project where the HVN is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `region` (`string`): The region where the HVN is located.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -137,6 +140,22 @@ Terraform resource block to set or update the hvn_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `hvn_id` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withRegion

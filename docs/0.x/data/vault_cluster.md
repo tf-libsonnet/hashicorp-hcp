@@ -20,6 +20,7 @@ This package contains functions and utilities for setting up the data source usi
 * [`fn withClusterId()`](#fn-withclusterid)
 * [`fn withMetricsConfig()`](#fn-withmetricsconfig)
 * [`fn withMetricsConfigMixin()`](#fn-withmetricsconfigmixin)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj audit_log_config`](#obj-audit_log_config)
@@ -59,6 +60,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block.
   - `cluster_id` (`string`): The ID of the HCP Vault cluster.
+  - `project_id` (`string`): The ID of the HCP project where the Vault cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
   - `metrics_config` (`list[obj]`): The metrics configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `metrics_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.vault_cluster.metrics_config.new](#fn-metrics_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.vault_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -86,6 +88,7 @@ injecting into a complete block.
 
 **Args**:
   - `cluster_id` (`string`): The ID of the HCP Vault cluster.
+  - `project_id` (`string`): The ID of the HCP project where the Vault cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
   - `metrics_config` (`list[obj]`): The metrics configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `metrics_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.vault_cluster.metrics_config.new](#fn-metrics_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.vault_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -182,6 +185,22 @@ function.
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block to update.
   - `value` (`list[obj]`): The value to set for the `metrics_config` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the project_id field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withTimeouts

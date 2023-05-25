@@ -35,6 +35,7 @@ the `src` and/or `version` parameters are set.
 **Args**:
   - `client_id` (`string`): The OAuth2 Client ID for API operations. When `null`, the `client_id` field will be omitted from the resulting object.
   - `client_secret` (`string`): The OAuth2 Client Secret for API operations. When `null`, the `client_secret` field will be omitted from the resulting object.
+  - `project_id` (`string`): The default project in which resources should be created. When `null`, the `project_id` field will be omitted from the resulting object.
   - `alias` (`string`): The provider `alias` to set for this instance of the provider block. When `null`, the `alias`
   field will be omitted from the resulting provider block.
   - `src` (`string`): The provider `source` to set on the resulting `required_providers` block. If `src` or `version` is
@@ -68,6 +69,7 @@ injecting into a complete block.
 **Args**:
   - `client_id` (`string`): The OAuth2 Client ID for API operations. When `null`, the `client_id` field will be omitted from the resulting object.
   - `client_secret` (`string`): The OAuth2 Client Secret for API operations. When `null`, the `client_secret` field will be omitted from the resulting object.
+  - `project_id` (`string`): The default project in which resources should be created. When `null`, the `project_id` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that can be used with [tf.withProvider](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withprovider) to construct a new `hcp` provider

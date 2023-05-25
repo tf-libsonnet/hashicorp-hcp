@@ -20,6 +20,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPeerVpcId()`](#fn-withpeervpcid)
 * [`fn withPeerVpcRegion()`](#fn-withpeervpcregion)
 * [`fn withPeeringId()`](#fn-withpeeringid)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj timeouts`](#obj-timeouts)
@@ -59,6 +60,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `peer_vpc_id` (`string`): The ID of the peer VPC in AWS.
   - `peer_vpc_region` (`string`): The region of the peer VPC in AWS.
   - `peering_id` (`string`): The ID of the network peering.
+  - `project_id` (`string`): The ID of the HCP project where the network peering is located. Always matches the HVN&#39;s project. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -88,6 +90,7 @@ injecting into a complete block.
   - `peer_vpc_id` (`string`): The ID of the peer VPC in AWS.
   - `peer_vpc_region` (`string`): The region of the peer VPC in AWS.
   - `peering_id` (`string`): The ID of the network peering.
+  - `project_id` (`string`): The ID of the HCP project where the network peering is located. Always matches the HVN&#39;s project. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -172,6 +175,22 @@ Terraform resource block to set or update the peering_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `peering_id` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withTimeouts
