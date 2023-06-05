@@ -17,6 +17,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withHvn1()`](#fn-withhvn1)
 * [`fn withHvn2()`](#fn-withhvn2)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj timeouts`](#obj-timeouts)
@@ -53,6 +54,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `hvn_1` (`string`): The unique URL of one of the HVNs being peered.
   - `hvn_2` (`string`): The unique URL of one of the HVNs being peered.
+  - `project_id` (`string`): The ID of the HCP project where the HVN peering connection is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_peering_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -79,6 +81,7 @@ injecting into a complete block.
 **Args**:
   - `hvn_1` (`string`): The unique URL of one of the HVNs being peered.
   - `hvn_2` (`string`): The unique URL of one of the HVNs being peered.
+  - `project_id` (`string`): The ID of the HCP project where the HVN peering connection is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_peering_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -115,6 +118,22 @@ Terraform resource block to set or update the hvn_2 field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `hvn_2` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withTimeouts

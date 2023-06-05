@@ -16,10 +16,15 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withClusterId()`](#fn-withclusterid)
+* [`fn withMaintenanceWindowConfig()`](#fn-withmaintenancewindowconfig)
+* [`fn withMaintenanceWindowConfigMixin()`](#fn-withmaintenancewindowconfigmixin)
 * [`fn withPassword()`](#fn-withpassword)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`fn withUsername()`](#fn-withusername)
+* [`obj maintenance_window_config`](#obj-maintenance_window_config)
+  * [`fn new()`](#fn-maintenance_window_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -54,7 +59,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `cluster_id` (`string`): The ID of the Boundary cluster
   - `password` (`string`): The password of the initial admin user. This must be at least 8 characters in length. Note that this may show up in logs, and it will be stored in the state file.
+  - `project_id` (`string`): The ID of the HCP project where the Boundary cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `username` (`string`): The username of the initial admin user. This must be at least 3 characters in length, alphanumeric, hyphen, or period.
+  - `maintenance_window_config` (`list[obj]`): The maintenance window configuration for when cluster upgrades can take place. When `null`, the `maintenance_window_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.maintenance_window_config.new](#fn-maintenance_window_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -81,7 +88,9 @@ injecting into a complete block.
 **Args**:
   - `cluster_id` (`string`): The ID of the Boundary cluster
   - `password` (`string`): The password of the initial admin user. This must be at least 8 characters in length. Note that this may show up in logs, and it will be stored in the state file.
+  - `project_id` (`string`): The ID of the HCP project where the Boundary cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `username` (`string`): The username of the initial admin user. This must be at least 3 characters in length, alphanumeric, hyphen, or period.
+  - `maintenance_window_config` (`list[obj]`): The maintenance window configuration for when cluster upgrades can take place. When `null`, the `maintenance_window_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.maintenance_window_config.new](#fn-maintenance_window_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -104,6 +113,43 @@ Terraform resource block to set or update the cluster_id field.
   - `value` (`string`): The value to set for the `cluster_id` field.
 
 
+### fn withMaintenanceWindowConfig
+
+```ts
+withMaintenanceWindowConfig()
+```
+
+`hcp.list[obj].withMaintenanceWindowConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the maintenance_window_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [hcp.list[obj].withMaintenanceWindowConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `maintenance_window_config` field.
+
+
+### fn withMaintenanceWindowConfigMixin
+
+```ts
+withMaintenanceWindowConfigMixin()
+```
+
+`hcp.list[obj].withMaintenanceWindowConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the maintenance_window_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [hcp.list[obj].withMaintenanceWindowConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `maintenance_window_config` field.
+
+
 ### fn withPassword
 
 ```ts
@@ -118,6 +164,22 @@ Terraform resource block to set or update the password field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `password` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withTimeouts
@@ -170,6 +232,32 @@ Terraform resource block to set or update the username field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `username` field.
+
+
+## obj maintenance_window_config
+
+
+
+### fn maintenance_window_config.new
+
+```ts
+new()
+```
+
+
+`hcp.boundary_cluster.maintenance_window_config.new` constructs a new object with attributes and blocks configured for the `maintenance_window_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `day` (`string`): The maintenance day of the week for scheduled upgrades. Valid options for maintenance window day - `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY` When `null`, the `day` field will be omitted from the resulting object.
+  - `end` (`number`): The end time which upgrades can be performed. Uses 24H clock. Valid options include - 1 to 24 (inclusive) When `null`, the `end` field will be omitted from the resulting object.
+  - `start` (`number`): The start time which upgrades can be performed. Uses 24H clock. Valid options include - 0 to 23 (inclusive) When `null`, the `start` field will be omitted from the resulting object.
+  - `upgrade_type` (`string`): The upgrade type for the cluster. Valid options for upgrade type - `AUTOMATIC`, `SCHEDULED` When `null`, the `upgrade_type` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `maintenance_window_config` sub block.
 
 
 ## obj timeouts

@@ -26,6 +26,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withMinVaultVersion()`](#fn-withminvaultversion)
 * [`fn withPathsFilter()`](#fn-withpathsfilter)
 * [`fn withPrimaryLink()`](#fn-withprimarylink)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withPublicEndpoint()`](#fn-withpublicendpoint)
 * [`fn withTier()`](#fn-withtier)
 * [`fn withTimeouts()`](#fn-withtimeouts)
@@ -73,6 +74,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `min_vault_version` (`string`): The minimum Vault version to use when creating the cluster. If not specified, it is defaulted to the version that is currently recommended by HCP. When `null`, the `min_vault_version` field will be omitted from the resulting object.
   - `paths_filter` (`list`): The performance replication [paths filter](https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication-terraform). Applies to performance replication secondaries only and operates in &#34;deny&#34; mode only. When `null`, the `paths_filter` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Vault Plus tier cluster which is the primary in the performance replication setup with this HCP Vault Plus tier cluster. If not specified, it is a standalone Plus tier HCP Vault cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the Vault cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
@@ -107,6 +109,7 @@ injecting into a complete block.
   - `min_vault_version` (`string`): The minimum Vault version to use when creating the cluster. If not specified, it is defaulted to the version that is currently recommended by HCP. When `null`, the `min_vault_version` field will be omitted from the resulting object.
   - `paths_filter` (`list`): The performance replication [paths filter](https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication-terraform). Applies to performance replication secondaries only and operates in &#34;deny&#34; mode only. When `null`, the `paths_filter` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Vault Plus tier cluster which is the primary in the performance replication setup with this HCP Vault Plus tier cluster. If not specified, it is a standalone Plus tier HCP Vault cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the Vault cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
@@ -307,6 +310,22 @@ Terraform resource block to set or update the primary_link field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `primary_link` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the project_id field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withPublicEndpoint

@@ -17,6 +17,7 @@ This package contains functions and utilities for setting up the data source usi
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withBucketName()`](#fn-withbucketname)
 * [`fn withChannel()`](#fn-withchannel)
+* [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj timeouts`](#obj-timeouts)
@@ -53,6 +54,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `dataSrcLabel` (`string`): The name label of the block.
   - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket to pull from.
   - `channel` (`string`): The channel that points to the version of the image you want.
+  - `project_id` (`string`): The ID of the HCP project where the HCP Packer registry is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image_iteration.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -79,6 +81,7 @@ injecting into a complete block.
 **Args**:
   - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket to pull from.
   - `channel` (`string`): The channel that points to the version of the image you want.
+  - `project_id` (`string`): The ID of the HCP project where the HCP Packer registry is located. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image_iteration.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -115,6 +118,22 @@ Terraform data source block to set or update the channel field.
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `channel` field.
+
+
+### fn withProjectId
+
+```ts
+withProjectId()
+```
+
+`hcp.string.withProjectId` constructs a mixin object that can be merged into the `string`
+Terraform data source block to set or update the project_id field.
+
+
+
+**Args**:
+  - `dataSrcLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `project_id` field.
 
 
 ### fn withTimeouts
