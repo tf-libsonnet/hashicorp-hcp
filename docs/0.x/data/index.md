@@ -21,3 +21,4 @@ permalink: /data/
 * [packer_image_iteration](packer_image_iteration.md)
 * [packer_iteration](packer_iteration.md)
 * [vault_cluster](vault_cluster.md)
+* [vault_secrets_app](vault_secrets_app.md)

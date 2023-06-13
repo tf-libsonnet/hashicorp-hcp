@@ -16,4 +16,5 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   packer_image_iteration: (import 'packer_image_iteration.libsonnet'),
   packer_iteration: (import 'packer_iteration.libsonnet'),
   vault_cluster: (import 'vault_cluster.libsonnet'),
+  vault_secrets_app: (import 'vault_secrets_app.libsonnet'),
 }
