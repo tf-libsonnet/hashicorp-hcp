@@ -57,7 +57,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `destination_cidr` (`string`): The destination CIDR of the HVN route.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
-  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. Always matches the project ID in `hvn_link`. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `target_link` (`string`): A unique URL identifying the target of the HVN route. Examples of the target: [`aws_network_peering`](aws_network_peering.md), [`aws_transit_gateway_attachment`](aws_transit_gateway_attachment.md)
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -86,7 +86,7 @@ injecting into a complete block.
   - `destination_cidr` (`string`): The destination CIDR of the HVN route.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
-  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. Always matches the project ID in `hvn_link`. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `target_link` (`string`): A unique URL identifying the target of the HVN route. Examples of the target: [`aws_network_peering`](aws_network_peering.md), [`aws_transit_gateway_attachment`](aws_transit_gateway_attachment.md)
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 

@@ -54,7 +54,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `dataSrcLabel` (`string`): The name label of the block.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
-  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. Always matches the project ID in `hvn_link`. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -81,7 +81,7 @@ injecting into a complete block.
 **Args**:
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `hvn_route_id` (`string`): The ID of the HVN route.
-  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HVN route is located. Always matches the project ID in `hvn_link`. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:

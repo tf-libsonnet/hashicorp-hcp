@@ -54,9 +54,9 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block.
   - `hvn_1` (`string`): The unique URL of one of the HVNs being peered.
-  - `hvn_2` (`string`): The unique URL of one of the HVNs being peered.
+  - `hvn_2` (`string`): The unique URL of one of the HVNs being peered. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `hvn_2` field will be omitted from the resulting object.
   - `peering_id` (`string`): The ID of the peering connection.
-  - `project_id` (`string`): The ID of the HCP project where the HVN peering connection is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HVN peering connection is located. Always matches hvn_1&#39;s project ID. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_peering_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -82,9 +82,9 @@ injecting into a complete block.
 
 **Args**:
   - `hvn_1` (`string`): The unique URL of one of the HVNs being peered.
-  - `hvn_2` (`string`): The unique URL of one of the HVNs being peered.
+  - `hvn_2` (`string`): The unique URL of one of the HVNs being peered. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `hvn_2` field will be omitted from the resulting object.
   - `peering_id` (`string`): The ID of the peering connection.
-  - `project_id` (`string`): The ID of the HCP project where the HVN peering connection is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): The ID of the HCP project where the HVN peering connection is located. Always matches hvn_1&#39;s project ID. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn_peering_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:

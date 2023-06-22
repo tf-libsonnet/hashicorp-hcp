@@ -252,8 +252,8 @@ Terraform sub block.
 
 **Args**:
   - `day` (`string`): The maintenance day of the week for scheduled upgrades. Valid options for maintenance window day - `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY` When `null`, the `day` field will be omitted from the resulting object.
-  - `end` (`number`): The end time which upgrades can be performed. Uses 24H clock. Valid options include - 1 to 24 (inclusive) When `null`, the `end` field will be omitted from the resulting object.
-  - `start` (`number`): The start time which upgrades can be performed. Uses 24H clock. Valid options include - 0 to 23 (inclusive) When `null`, the `start` field will be omitted from the resulting object.
+  - `end` (`number`): The end time which upgrades can be performed. Uses 24H clock and must be in UTC time zone. Valid options include - 1 to 24 (inclusive) When `null`, the `end` field will be omitted from the resulting object.
+  - `start` (`number`): The start time which upgrades can be performed. Uses 24H clock and must be in UTC time zone. Valid options include - 0 to 23 (inclusive) When `null`, the `start` field will be omitted from the resulting object.
   - `upgrade_type` (`string`): The upgrade type for the cluster. Valid options for upgrade type - `AUTOMATIC`, `SCHEDULED` When `null`, the `upgrade_type` field will be omitted from the resulting object.
 
 **Returns**:
