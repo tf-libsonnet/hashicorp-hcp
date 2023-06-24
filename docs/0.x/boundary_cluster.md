@@ -59,7 +59,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `cluster_id` (`string`): The ID of the Boundary cluster
   - `password` (`string`): The password of the initial admin user. This must be at least 8 characters in length. Note that this may show up in logs, and it will be stored in the state file.
-  - `project_id` (`string`): The ID of the HCP project where the Boundary cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the Boundary cluster is located.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `username` (`string`): The username of the initial admin user. This must be at least 3 characters in length, alphanumeric, hyphen, or period.
   - `maintenance_window_config` (`list[obj]`): The maintenance window configuration for when cluster upgrades can take place. When `null`, the `maintenance_window_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.maintenance_window_config.new](#fn-maintenance_window_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -88,7 +91,10 @@ injecting into a complete block.
 **Args**:
   - `cluster_id` (`string`): The ID of the Boundary cluster
   - `password` (`string`): The password of the initial admin user. This must be at least 8 characters in length. Note that this may show up in logs, and it will be stored in the state file.
-  - `project_id` (`string`): The ID of the HCP project where the Boundary cluster is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the Boundary cluster is located.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `username` (`string`): The username of the initial admin user. This must be at least 3 characters in length, alphanumeric, hyphen, or period.
   - `maintenance_window_config` (`list[obj]`): The maintenance window configuration for when cluster upgrades can take place. When `null`, the `maintenance_window_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.maintenance_window_config.new](#fn-maintenance_window_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.

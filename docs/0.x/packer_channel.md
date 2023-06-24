@@ -58,7 +58,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `resourceLabel` (`string`): The name label of the block.
   - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket where the channel should be created in.
   - `name` (`string`): The name of the channel being managed.
-  - `project_id` (`string`): The ID of the HCP project where this channel is located in. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where this channel is located in. 
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `iteration` (`list[obj]`): The iteration assigned to the channel. When `null`, the `iteration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.iteration.new](#fn-iterationnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -86,7 +89,10 @@ injecting into a complete block.
 **Args**:
   - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket where the channel should be created in.
   - `name` (`string`): The name of the channel being managed.
-  - `project_id` (`string`): The ID of the HCP project where this channel is located in. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where this channel is located in. 
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `iteration` (`list[obj]`): The iteration assigned to the channel. When `null`, the `iteration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.iteration.new](#fn-iterationnew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.timeouts.new](#fn-timeoutsnew) constructor.
 

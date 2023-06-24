@@ -61,7 +61,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `cloud_provider` (`string`): Name of the cloud provider this image is stored-in.
   - `component_type` (`string`): Name of the builder that built this image. Ex: `amazon-ebs.example`. When `null`, the `component_type` field will be omitted from the resulting object.
   - `iteration_id` (`string`): The iteration from which to get the image. Either this or `channel` must be specified. When `null`, the `iteration_id` field will be omitted from the resulting object.
-  - `project_id` (`string`): The ID of the HCP project where the HCP Packer Registry image is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the HCP Packer Registry image is located.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `region` (`string`): Region this image is stored in, if any.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -92,7 +95,10 @@ injecting into a complete block.
   - `cloud_provider` (`string`): Name of the cloud provider this image is stored-in.
   - `component_type` (`string`): Name of the builder that built this image. Ex: `amazon-ebs.example`. When `null`, the `component_type` field will be omitted from the resulting object.
   - `iteration_id` (`string`): The iteration from which to get the image. Either this or `channel` must be specified. When `null`, the `iteration_id` field will be omitted from the resulting object.
-  - `project_id` (`string`): The ID of the HCP project where the HCP Packer Registry image is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the HCP Packer Registry image is located.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `region` (`string`): Region this image is stored in, if any.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_image.timeouts.new](#fn-timeoutsnew) constructor.
 

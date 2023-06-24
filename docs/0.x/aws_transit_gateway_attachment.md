@@ -55,7 +55,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
-  - `project_id` (`string`): The ID of the HCP project where the transit gateway attachment is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the transit gateway attachment is located.&#34; 
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `resource_share_arn` (`string`): The Amazon Resource Name (ARN) of the Resource Share that is needed to grant HCP access to the transit gateway in AWS. The Resource Share should be associated with the HCP AWS account principal (see [aws_ram_principal_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association)) and the transit gateway resource (see [aws_ram_resource_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_resource_association))
   - `transit_gateway_attachment_id` (`string`): The user-settable name of the transit gateway attachment in HCP.
   - `transit_gateway_id` (`string`): The ID of the user-owned transit gateway in AWS. The AWS region of the transit gateway must match the HVN.
@@ -84,7 +87,10 @@ injecting into a complete block.
 
 **Args**:
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
-  - `project_id` (`string`): The ID of the HCP project where the transit gateway attachment is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the transit gateway attachment is located.&#34; 
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `resource_share_arn` (`string`): The Amazon Resource Name (ARN) of the Resource Share that is needed to grant HCP access to the transit gateway in AWS. The Resource Share should be associated with the HCP AWS account principal (see [aws_ram_principal_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association)) and the transit gateway resource (see [aws_ram_resource_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_resource_association))
   - `transit_gateway_attachment_id` (`string`): The user-settable name of the transit gateway attachment in HCP.
   - `transit_gateway_id` (`string`): The ID of the user-owned transit gateway in AWS. The AWS region of the transit gateway must match the HVN.
