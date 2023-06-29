@@ -56,7 +56,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block.
-  - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket to pull from.
+  - `bucket_name` (`string`): The slug of the HCP Packer Registry bucket to pull from.
   - `channel` (`string`): The channel that points to the version of the image being retrieved. Either this or `iteration_id` must be specified. Note: will incur a billable request When `null`, the `channel` field will be omitted from the resulting object.
   - `cloud_provider` (`string`): Name of the cloud provider this image is stored-in.
   - `component_type` (`string`): Name of the builder that built this image. Ex: `amazon-ebs.example`. When `null`, the `component_type` field will be omitted from the resulting object.
@@ -90,7 +90,7 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `bucket_name` (`string`): The slug of the HCP Packer Registry image bucket to pull from.
+  - `bucket_name` (`string`): The slug of the HCP Packer Registry bucket to pull from.
   - `channel` (`string`): The channel that points to the version of the image being retrieved. Either this or `iteration_id` must be specified. Note: will incur a billable request When `null`, the `channel` field will be omitted from the resulting object.
   - `cloud_provider` (`string`): Name of the cloud provider this image is stored-in.
   - `component_type` (`string`): Name of the builder that built this image. Ex: `amazon-ebs.example`. When `null`, the `component_type` field will be omitted from the resulting object.
