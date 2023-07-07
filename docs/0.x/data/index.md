@@ -17,6 +17,7 @@ permalink: /data/
 * [hvn](hvn.md)
 * [hvn_peering_connection](hvn_peering_connection.md)
 * [hvn_route](hvn_route.md)
+* [packer_bucket_names](packer_bucket_names.md)
 * [packer_image](packer_image.md)
 * [packer_image_iteration](packer_image_iteration.md)
 * [packer_iteration](packer_iteration.md)
