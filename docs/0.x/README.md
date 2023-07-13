@@ -24,6 +24,7 @@ project.
 * [hvn_route](hvn_route.md)
 * [packer_channel](packer_channel.md)
 * [packer_channel_assignment](packer_channel_assignment.md)
+* [packer_run_task](packer_run_task.md)
 * [provider](provider.md)
 * [vault_cluster](vault_cluster.md)
 * [vault_cluster_admin_token](vault_cluster_admin_token.md)
