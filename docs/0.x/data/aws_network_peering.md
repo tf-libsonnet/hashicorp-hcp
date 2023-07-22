@@ -55,7 +55,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `dataSrcLabel` (`string`): The name label of the block.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
   - `peering_id` (`string`): The ID of the network peering.
-  - `project_id` (`string`): The ID of the HCP project where the network peering is located. Always matches the HVN&#39;s project. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the network peering is located. Always matches the HVN&#39;s project.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `wait_for_active_state` (`bool`): If `true`, Terraform will wait for the network peering to reach an `ACTIVE` state before continuing. Default `false`. When `null`, the `wait_for_active_state` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 
@@ -83,7 +86,10 @@ injecting into a complete block.
 **Args**:
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
   - `peering_id` (`string`): The ID of the network peering.
-  - `project_id` (`string`): The ID of the HCP project where the network peering is located. Always matches the HVN&#39;s project. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the network peering is located. Always matches the HVN&#39;s project.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `wait_for_active_state` (`bool`): If `true`, Terraform will wait for the network peering to reach an `ACTIVE` state before continuing. Default `false`. When `null`, the `wait_for_active_state` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.aws_network_peering.timeouts.new](#fn-timeoutsnew) constructor.
 

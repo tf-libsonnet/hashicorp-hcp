@@ -1,12 +1,12 @@
 ---
-permalink: /data/boundary_cluster/
+permalink: /data/packer_run_task/
 ---
 
-# data.boundary_cluster
+# data.packer_run_task
 
-`boundary_cluster` represents the `hcp_boundary_cluster` Terraform data source.
+`packer_run_task` represents the `hcp_packer_run_task` Terraform data source.
 
-The Boundary cluster data source provides information about an existing HCP Boundary cluster.
+The Packer Run Task data source gets the configuration information needed to set up an HCP Packer Registry&#39;s run task.
 
 This package contains functions and utilities for setting up the data source using Jsonnet code.
 
@@ -15,7 +15,6 @@ This package contains functions and utilities for setting up the data source usi
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
-* [`fn withClusterId()`](#fn-withclusterid)
 * [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
@@ -31,32 +30,31 @@ new()
 ```
 
 
-`hcp.data.boundary_cluster.new` injects a new `data_hcp_boundary_cluster` Terraform `data source`
+`hcp.data.packer_run_task.new` injects a new `data_hcp_packer_run_task` Terraform `data source`
 block into the root module document.
 
 Additionally, this inserts a private function into the `_ref` attribute that generates references to attributes of the
 resource. For example, if you added a new instance to the root using:
 
     # arguments omitted for brevity
-    hcp.data.boundary_cluster.new('some_id')
+    hcp.data.packer_run_task.new('some_id')
 
-You can get the reference to the `id` field of the created `hcp.data.boundary_cluster` using the reference:
+You can get the reference to the `id` field of the created `hcp.data.packer_run_task` using the reference:
 
-    $._ref.data_hcp_boundary_cluster.some_id.get('id')
+    $._ref.data_hcp_packer_run_task.some_id.get('id')
 
-This is the same as directly entering `"${ data_hcp_boundary_cluster.some_id.id }"` as the value.
+This is the same as directly entering `"${ data_hcp_packer_run_task.some_id.id }"` as the value.
 
 NOTE: if you are chaining multiple resources together in a merge operation, you may not be able to use `super`, `self`,
 or `$` to refer to the root object. Instead, make an explicit outer object using `local`.
 
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block.
-  - `cluster_id` (`string`): The ID of the Boundary cluster
   - `project_id` (`string`): 
-The ID of the HCP project where the Boundary cluster is located. If not specified, the project configured in the HCP provider config block will be used.
+The ID of the HCP project where the HCP Packer Registry is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_run_task.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
 - A mixin object that injects the new data source into the root Terraform configuration.
@@ -69,10 +67,10 @@ newAttrs()
 ```
 
 
-`hcp.data.boundary_cluster.newAttrs` constructs a new object with attributes and blocks configured for the `boundary_cluster`
+`hcp.data.packer_run_task.newAttrs` constructs a new object with attributes and blocks configured for the `packer_run_task`
 Terraform data source.
 
-Unlike [hcp.data.boundary_cluster.new](#fn-new), this function will not inject the `data source`
+Unlike [hcp.data.packer_run_task.new](#fn-new), this function will not inject the `data source`
 block into the root Terraform document. Instead, this must be passed in as the `attrs` argument for the
 [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) function to build a complete block.
 
@@ -80,31 +78,14 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `cluster_id` (`string`): The ID of the Boundary cluster
   - `project_id` (`string`): 
-The ID of the HCP project where the Boundary cluster is located. If not specified, the project configured in the HCP provider config block will be used.
+The ID of the HCP project where the HCP Packer Registry is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
-  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.boundary_cluster.timeouts.new](#fn-timeoutsnew) constructor.
+  - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.packer_run_task.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
-  - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `boundary_cluster` data source into the root Terraform configuration.
-
-
-### fn withClusterId
-
-```ts
-withClusterId()
-```
-
-`hcp.string.withClusterId` constructs a mixin object that can be merged into the `string`
-Terraform data source block to set or update the cluster_id field.
-
-
-
-**Args**:
-  - `dataSrcLabel` (`string`): The name label of the block to update.
-  - `value` (`string`): The value to set for the `cluster_id` field.
+  - An attribute object that can be used with [tf.withData](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withdata) to construct a new `packer_run_task` data source into the root Terraform configuration.
 
 
 ### fn withProjectId
@@ -170,7 +151,7 @@ new()
 ```
 
 
-`hcp.boundary_cluster.timeouts.new` constructs a new object with attributes and blocks configured for the `timeouts`
+`hcp.packer_run_task.timeouts.new` constructs a new object with attributes and blocks configured for the `timeouts`
 Terraform sub block.
 
 

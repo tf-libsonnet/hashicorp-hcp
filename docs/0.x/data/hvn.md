@@ -52,7 +52,10 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 **Args**:
   - `dataSrcLabel` (`string`): The name label of the block.
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
-  - `project_id` (`string`): The ID of the HCP project where the HVN is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the HVN is located.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting data source block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -78,7 +81,10 @@ injecting into a complete block.
 
 **Args**:
   - `hvn_id` (`string`): The ID of the HashiCorp Virtual Network (HVN).
-  - `project_id` (`string`): The ID of the HCP project where the HVN is located. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `project_id` (`string`): 
+The ID of the HCP project where the HVN is located.
+If not specified, the project specified in the HCP Provider config block will be used, if configured.
+If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.data.hvn.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:

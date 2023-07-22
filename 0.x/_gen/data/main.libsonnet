@@ -12,9 +12,11 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   hvn: (import 'hvn.libsonnet'),
   hvn_peering_connection: (import 'hvn_peering_connection.libsonnet'),
   hvn_route: (import 'hvn_route.libsonnet'),
+  packer_bucket_names: (import 'packer_bucket_names.libsonnet'),
   packer_image: (import 'packer_image.libsonnet'),
   packer_image_iteration: (import 'packer_image_iteration.libsonnet'),
   packer_iteration: (import 'packer_iteration.libsonnet'),
+  packer_run_task: (import 'packer_run_task.libsonnet'),
   vault_cluster: (import 'vault_cluster.libsonnet'),
   vault_secrets_app: (import 'vault_secrets_app.libsonnet'),
 }
