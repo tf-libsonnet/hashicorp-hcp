@@ -16,14 +16,11 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
 * [`fn withBucketName()`](#fn-withbucketname)
-* [`fn withIteration()`](#fn-withiteration)
-* [`fn withIterationMixin()`](#fn-withiterationmixin)
 * [`fn withName()`](#fn-withname)
 * [`fn withProjectId()`](#fn-withprojectid)
+* [`fn withRestricted()`](#fn-withrestricted)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
-* [`obj iteration`](#obj-iteration)
-  * [`fn new()`](#fn-iterationnew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -62,7 +59,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 The ID of the HCP project where this channel is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
-  - `iteration` (`list[obj]`): The iteration assigned to the channel. This block is deprecated. Please use `hcp_packer_channel_assignment` instead. When `null`, the `iteration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.iteration.new](#fn-iterationnew) constructor.
+  - `restricted` (`bool`): If true, the channel is only visible to users with permission to create and manage it. If false, the channel is visible to every member of the organization. When `null`, the `restricted` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -93,7 +90,7 @@ injecting into a complete block.
 The ID of the HCP project where this channel is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
-  - `iteration` (`list[obj]`): The iteration assigned to the channel. This block is deprecated. Please use `hcp_packer_channel_assignment` instead. When `null`, the `iteration` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.iteration.new](#fn-iterationnew) constructor.
+  - `restricted` (`bool`): If true, the channel is only visible to users with permission to create and manage it. If false, the channel is visible to every member of the organization. When `null`, the `restricted` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -114,43 +111,6 @@ Terraform resource block to set or update the bucket_name field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `bucket_name` field.
-
-
-### fn withIteration
-
-```ts
-withIteration()
-```
-
-`hcp.list[obj].withIteration` constructs a mixin object that can be merged into the `list[obj]`
-Terraform resource block to set or update the iteration field.
-
-This function will replace the array with the passed in `value`. If you wish to instead append the
-passed in value to the existing array, use the [hcp.list[obj].withIterationMixin](TODO) function.
-
-
-**Args**:
-  - `resourceLabel` (`string`): The name label of the block to update.
-  - `value` (`list[obj]`): The value to set for the `iteration` field.
-
-
-### fn withIterationMixin
-
-```ts
-withIterationMixin()
-```
-
-`hcp.list[obj].withIterationMixin` constructs a mixin object that can be merged into the `list[obj]`
-Terraform resource block to set or update the iteration field.
-
-This function will append the passed in array or object to the existing array. If you wish
-to instead replace the array with the passed in `value`, use the [hcp.list[obj].withIteration](TODO)
-function.
-
-
-**Args**:
-  - `resourceLabel` (`string`): The name label of the block to update.
-  - `value` (`list[obj]`): The value to set for the `iteration` field.
 
 
 ### fn withName
@@ -183,6 +143,22 @@ Terraform resource block to set or update the project_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `project_id` field.
+
+
+### fn withRestricted
+
+```ts
+withRestricted()
+```
+
+`hcp.bool.withRestricted` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the restricted field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `restricted` field.
 
 
 ### fn withTimeouts
@@ -219,30 +195,6 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
-
-
-## obj iteration
-
-
-
-### fn iteration.new
-
-```ts
-new()
-```
-
-
-`hcp.packer_channel.iteration.new` constructs a new object with attributes and blocks configured for the `iteration`
-Terraform sub block.
-
-
-
-**Args**:
-  - `fingerprint` (`string`): The fingerprint of the iteration assigned to the channel. When `null`, the `fingerprint` field will be omitted from the resulting object.
-  - `incremental_version` (`number`): The incremental_version of the iteration assigned to the channel. When `null`, the `incremental_version` field will be omitted from the resulting object.
-
-**Returns**:
-  - An attribute object that represents the `iteration` sub block.
 
 
 ## obj timeouts

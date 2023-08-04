@@ -6,7 +6,7 @@ permalink: /data/packer_image_iteration/
 
 `packer_image_iteration` represents the `hcp_packer_image_iteration` Terraform data source.
 
-The Packer Image data source iteration gets the most recent iteration (or build) of an image, given a channel.
+The Packer ImageIteration data source iteration gets the most recent iteration (or build) of an image, given a channel.
 
 This package contains functions and utilities for setting up the data source using Jsonnet code.
 
