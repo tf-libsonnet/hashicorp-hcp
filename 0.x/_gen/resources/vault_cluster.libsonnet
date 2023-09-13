@@ -3,8 +3,11 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
 {
   '#':: d.pkg(name='vault_cluster', url='', help='`vault_cluster` represents the `hcp_vault_cluster` Terraform resource.\n\nThe Vault cluster resource allows you to manage an HCP Vault cluster.\n\nThis package contains functions and utilities for setting up the resource using Jsonnet code.\n'),
   audit_log_config:: {
-    '#new':: d.fn(help='\n`hcp.vault_cluster.audit_log_config.new` constructs a new object with attributes and blocks configured for the `audit_log_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `datadog_api_key` (`string`): Datadog api key for streaming audit logs When `null`, the `datadog_api_key` field will be omitted from the resulting object.\n  - `datadog_region` (`string`): Datadog region for streaming audit logs When `null`, the `datadog_region` field will be omitted from the resulting object.\n  - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.\n  - `grafana_password` (`string`): Grafana password for streaming audit logs When `null`, the `grafana_password` field will be omitted from the resulting object.\n  - `grafana_user` (`string`): Grafana user for streaming audit logs When `null`, the `grafana_user` field will be omitted from the resulting object.\n  - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming audit logs When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.\n  - `splunk_token` (`string`): Splunk token for streaming audit logs When `null`, the `splunk_token` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `audit_log_config` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`hcp.vault_cluster.audit_log_config.new` constructs a new object with attributes and blocks configured for the `audit_log_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `cloudwatch_access_key_id` (`string`): CloudWatch access key ID for streaming audit logs When `null`, the `cloudwatch_access_key_id` field will be omitted from the resulting object.\n  - `cloudwatch_region` (`string`): CloudWatch region for streaming audit logs When `null`, the `cloudwatch_region` field will be omitted from the resulting object.\n  - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming audit logs When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.\n  - `datadog_api_key` (`string`): Datadog api key for streaming audit logs When `null`, the `datadog_api_key` field will be omitted from the resulting object.\n  - `datadog_region` (`string`): Datadog region for streaming audit logs When `null`, the `datadog_region` field will be omitted from the resulting object.\n  - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.\n  - `grafana_password` (`string`): Grafana password for streaming audit logs When `null`, the `grafana_password` field will be omitted from the resulting object.\n  - `grafana_user` (`string`): Grafana user for streaming audit logs When `null`, the `grafana_user` field will be omitted from the resulting object.\n  - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming audit logs When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.\n  - `splunk_token` (`string`): Splunk token for streaming audit logs When `null`, the `splunk_token` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `audit_log_config` sub block.\n', args=[]),
     new(
+      cloudwatch_access_key_id=null,
+      cloudwatch_region=null,
+      cloudwatch_secret_access_key=null,
       datadog_api_key=null,
       datadog_region=null,
       grafana_endpoint=null,
@@ -13,6 +16,9 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       splunk_hecendpoint=null,
       splunk_token=null
     ):: std.prune(a={
+      cloudwatch_access_key_id: cloudwatch_access_key_id,
+      cloudwatch_region: cloudwatch_region,
+      cloudwatch_secret_access_key: cloudwatch_secret_access_key,
       datadog_api_key: datadog_api_key,
       datadog_region: datadog_region,
       grafana_endpoint: grafana_endpoint,
@@ -35,8 +41,11 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
     }),
   },
   metrics_config:: {
-    '#new':: d.fn(help='\n`hcp.vault_cluster.metrics_config.new` constructs a new object with attributes and blocks configured for the `metrics_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `datadog_api_key` (`string`): Datadog api key for streaming metrics When `null`, the `datadog_api_key` field will be omitted from the resulting object.\n  - `datadog_region` (`string`): Datadog region for streaming metrics When `null`, the `datadog_region` field will be omitted from the resulting object.\n  - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.\n  - `grafana_password` (`string`): Grafana password for streaming metrics When `null`, the `grafana_password` field will be omitted from the resulting object.\n  - `grafana_user` (`string`): Grafana user for streaming metrics When `null`, the `grafana_user` field will be omitted from the resulting object.\n  - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming metrics When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.\n  - `splunk_token` (`string`): Splunk token for streaming metrics When `null`, the `splunk_token` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `metrics_config` sub block.\n', args=[]),
+    '#new':: d.fn(help='\n`hcp.vault_cluster.metrics_config.new` constructs a new object with attributes and blocks configured for the `metrics_config`\nTerraform sub block.\n\n\n\n**Args**:\n  - `cloudwatch_access_key_id` (`string`): CloudWatch access key ID for streaming metrics When `null`, the `cloudwatch_access_key_id` field will be omitted from the resulting object.\n  - `cloudwatch_region` (`string`): CloudWatch region for streaming metrics When `null`, the `cloudwatch_region` field will be omitted from the resulting object.\n  - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming metrics When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.\n  - `datadog_api_key` (`string`): Datadog api key for streaming metrics When `null`, the `datadog_api_key` field will be omitted from the resulting object.\n  - `datadog_region` (`string`): Datadog region for streaming metrics When `null`, the `datadog_region` field will be omitted from the resulting object.\n  - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.\n  - `grafana_password` (`string`): Grafana password for streaming metrics When `null`, the `grafana_password` field will be omitted from the resulting object.\n  - `grafana_user` (`string`): Grafana user for streaming metrics When `null`, the `grafana_user` field will be omitted from the resulting object.\n  - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming metrics When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.\n  - `splunk_token` (`string`): Splunk token for streaming metrics When `null`, the `splunk_token` field will be omitted from the resulting object.\n\n**Returns**:\n  - An attribute object that represents the `metrics_config` sub block.\n', args=[]),
     new(
+      cloudwatch_access_key_id=null,
+      cloudwatch_region=null,
+      cloudwatch_secret_access_key=null,
       datadog_api_key=null,
       datadog_region=null,
       grafana_endpoint=null,
@@ -45,6 +54,9 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
       splunk_hecendpoint=null,
       splunk_token=null
     ):: std.prune(a={
+      cloudwatch_access_key_id: cloudwatch_access_key_id,
+      cloudwatch_region: cloudwatch_region,
+      cloudwatch_secret_access_key: cloudwatch_secret_access_key,
       datadog_api_key: datadog_api_key,
       datadog_region: datadog_region,
       grafana_endpoint: grafana_endpoint,

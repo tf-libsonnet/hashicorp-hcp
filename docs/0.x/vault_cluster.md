@@ -438,6 +438,9 @@ Terraform sub block.
 
 
 **Args**:
+  - `cloudwatch_access_key_id` (`string`): CloudWatch access key ID for streaming audit logs When `null`, the `cloudwatch_access_key_id` field will be omitted from the resulting object.
+  - `cloudwatch_region` (`string`): CloudWatch region for streaming audit logs When `null`, the `cloudwatch_region` field will be omitted from the resulting object.
+  - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming audit logs When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.
   - `datadog_api_key` (`string`): Datadog api key for streaming audit logs When `null`, the `datadog_api_key` field will be omitted from the resulting object.
   - `datadog_region` (`string`): Datadog region for streaming audit logs When `null`, the `datadog_region` field will be omitted from the resulting object.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
@@ -492,6 +495,9 @@ Terraform sub block.
 
 
 **Args**:
+  - `cloudwatch_access_key_id` (`string`): CloudWatch access key ID for streaming metrics When `null`, the `cloudwatch_access_key_id` field will be omitted from the resulting object.
+  - `cloudwatch_region` (`string`): CloudWatch region for streaming metrics When `null`, the `cloudwatch_region` field will be omitted from the resulting object.
+  - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming metrics When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.
   - `datadog_api_key` (`string`): Datadog api key for streaming metrics When `null`, the `datadog_api_key` field will be omitted from the resulting object.
   - `datadog_region` (`string`): Datadog region for streaming metrics When `null`, the `datadog_region` field will be omitted from the resulting object.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
