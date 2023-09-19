@@ -28,3 +28,4 @@ project.
 * [provider](provider.md)
 * [vault_cluster](vault_cluster.md)
 * [vault_cluster_admin_token](vault_cluster_admin_token.md)
+* [vault_plugin](vault_plugin.md)

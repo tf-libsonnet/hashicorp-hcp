@@ -27,6 +27,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPathsFilter()`](#fn-withpathsfilter)
 * [`fn withPrimaryLink()`](#fn-withprimarylink)
 * [`fn withProjectId()`](#fn-withprojectid)
+* [`fn withProxyEndpoint()`](#fn-withproxyendpoint)
 * [`fn withPublicEndpoint()`](#fn-withpublicendpoint)
 * [`fn withTier()`](#fn-withtier)
 * [`fn withTimeouts()`](#fn-withtimeouts)
@@ -78,6 +79,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 The ID of the HCP project where the Vault cluster is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `proxy_endpoint` (`string`): Denotes that the cluster has a proxy endpoint. Valid options are `ENABLED`, `DISABLED`. Defaults to `DISABLED`. When `null`, the `proxy_endpoint` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
@@ -116,6 +118,7 @@ injecting into a complete block.
 The ID of the HCP project where the Vault cluster is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `proxy_endpoint` (`string`): Denotes that the cluster has a proxy endpoint. Valid options are `ENABLED`, `DISABLED`. Defaults to `DISABLED`. When `null`, the `proxy_endpoint` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
@@ -334,6 +337,22 @@ Terraform resource block to set or update the project_id field.
   - `value` (`string`): The value to set for the `project_id` field.
 
 
+### fn withProxyEndpoint
+
+```ts
+withProxyEndpoint()
+```
+
+`hcp.string.withProxyEndpoint` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the proxy_endpoint field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `proxy_endpoint` field.
+
+
 ### fn withPublicEndpoint
 
 ```ts
@@ -419,6 +438,9 @@ Terraform sub block.
 
 
 **Args**:
+  - `cloudwatch_access_key_id` (`string`): CloudWatch access key ID for streaming audit logs When `null`, the `cloudwatch_access_key_id` field will be omitted from the resulting object.
+  - `cloudwatch_region` (`string`): CloudWatch region for streaming audit logs When `null`, the `cloudwatch_region` field will be omitted from the resulting object.
+  - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming audit logs When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.
   - `datadog_api_key` (`string`): Datadog api key for streaming audit logs When `null`, the `datadog_api_key` field will be omitted from the resulting object.
   - `datadog_region` (`string`): Datadog region for streaming audit logs When `null`, the `datadog_region` field will be omitted from the resulting object.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
@@ -473,6 +495,9 @@ Terraform sub block.
 
 
 **Args**:
+  - `cloudwatch_access_key_id` (`string`): CloudWatch access key ID for streaming metrics When `null`, the `cloudwatch_access_key_id` field will be omitted from the resulting object.
+  - `cloudwatch_region` (`string`): CloudWatch region for streaming metrics When `null`, the `cloudwatch_region` field will be omitted from the resulting object.
+  - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming metrics When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.
   - `datadog_api_key` (`string`): Datadog api key for streaming metrics When `null`, the `datadog_api_key` field will be omitted from the resulting object.
   - `datadog_region` (`string`): Datadog region for streaming metrics When `null`, the `datadog_region` field will be omitted from the resulting object.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.

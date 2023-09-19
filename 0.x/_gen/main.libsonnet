@@ -17,5 +17,6 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   packer_run_task: (import 'resources/packer_run_task.libsonnet'),
   vault_cluster: (import 'resources/vault_cluster.libsonnet'),
   vault_cluster_admin_token: (import 'resources/vault_cluster_admin_token.libsonnet'),
+  vault_plugin: (import 'resources/vault_plugin.libsonnet'),
   data: (import 'data/main.libsonnet'),
 }
