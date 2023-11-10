@@ -443,6 +443,9 @@ Terraform sub block.
   - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming audit logs When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.
   - `datadog_api_key` (`string`): Datadog api key for streaming audit logs When `null`, the `datadog_api_key` field will be omitted from the resulting object.
   - `datadog_region` (`string`): Datadog region for streaming audit logs When `null`, the `datadog_region` field will be omitted from the resulting object.
+  - `elasticsearch_endpoint` (`string`): ElasticSearch endpoint for streaming audit logs When `null`, the `elasticsearch_endpoint` field will be omitted from the resulting object.
+  - `elasticsearch_password` (`string`): ElasticSearch password for streaming audit logs When `null`, the `elasticsearch_password` field will be omitted from the resulting object.
+  - `elasticsearch_user` (`string`): ElasticSearch user for streaming audit logs When `null`, the `elasticsearch_user` field will be omitted from the resulting object.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming audit logs When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming audit logs When `null`, the `grafana_user` field will be omitted from the resulting object.
@@ -500,6 +503,9 @@ Terraform sub block.
   - `cloudwatch_secret_access_key` (`string`): CloudWatch secret access key for streaming metrics When `null`, the `cloudwatch_secret_access_key` field will be omitted from the resulting object.
   - `datadog_api_key` (`string`): Datadog api key for streaming metrics When `null`, the `datadog_api_key` field will be omitted from the resulting object.
   - `datadog_region` (`string`): Datadog region for streaming metrics When `null`, the `datadog_region` field will be omitted from the resulting object.
+  - `elasticsearch_endpoint` (`string`): ElasticSearch endpoint for streaming metrics When `null`, the `elasticsearch_endpoint` field will be omitted from the resulting object.
+  - `elasticsearch_password` (`string`): ElasticSearch password for streaming metrics When `null`, the `elasticsearch_password` field will be omitted from the resulting object.
+  - `elasticsearch_user` (`string`): ElasticSearch user for streaming metrics When `null`, the `elasticsearch_user` field will be omitted from the resulting object.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming metrics When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming metrics When `null`, the `grafana_user` field will be omitted from the resulting object.
