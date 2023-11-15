@@ -35,6 +35,7 @@ the `src` and/or `version` parameters are set.
 **Args**:
   - `client_id` (`string`): The OAuth2 Client ID for API operations. When `null`, the `client_id` field will be omitted from the resulting object.
   - `client_secret` (`string`): The OAuth2 Client Secret for API operations. When `null`, the `client_secret` field will be omitted from the resulting object.
+  - `credential_file` (`string`): The path to an HCP credential file to use to authenticate the provider to HCP. You can alternatively set the HCP_CRED_FILE environment variable to point at a credential file as well. Using a credential file allows you to authenticate the provider as a service principal via client credentials or dynamically based on Workload Identity Federation. When `null`, the `credential_file` field will be omitted from the resulting object.
   - `project_id` (`string`): The default project in which resources should be created. When `null`, the `project_id` field will be omitted from the resulting object.
   - `alias` (`string`): The provider `alias` to set for this instance of the provider block. When `null`, the `alias`
   field will be omitted from the resulting provider block.
@@ -69,6 +70,7 @@ injecting into a complete block.
 **Args**:
   - `client_id` (`string`): The OAuth2 Client ID for API operations. When `null`, the `client_id` field will be omitted from the resulting object.
   - `client_secret` (`string`): The OAuth2 Client Secret for API operations. When `null`, the `client_secret` field will be omitted from the resulting object.
+  - `credential_file` (`string`): The path to an HCP credential file to use to authenticate the provider to HCP. You can alternatively set the HCP_CRED_FILE environment variable to point at a credential file as well. Using a credential file allows you to authenticate the provider as a service principal via client credentials or dynamically based on Workload Identity Federation. When `null`, the `credential_file` field will be omitted from the resulting object.
   - `project_id` (`string`): The default project in which resources should be created. When `null`, the `project_id` field will be omitted from the resulting object.
 
 **Returns**:

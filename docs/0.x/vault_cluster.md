@@ -449,6 +449,9 @@ Terraform sub block.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming audit logs When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming audit logs When `null`, the `grafana_user` field will be omitted from the resulting object.
+  - `newrelic_account_id` (`string`): NewRelic Account ID for streaming audit logs When `null`, the `newrelic_account_id` field will be omitted from the resulting object.
+  - `newrelic_license_key` (`string`): NewRelic license key for streaming audit logs When `null`, the `newrelic_license_key` field will be omitted from the resulting object.
+  - `newrelic_region` (`string`): NewRelic region for streaming audit logs, allowed values are &#34;US&#34; and &#34;EU&#34; When `null`, the `newrelic_region` field will be omitted from the resulting object.
   - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming audit logs When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.
   - `splunk_token` (`string`): Splunk token for streaming audit logs When `null`, the `splunk_token` field will be omitted from the resulting object.
 
@@ -509,6 +512,9 @@ Terraform sub block.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming metrics When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming metrics When `null`, the `grafana_user` field will be omitted from the resulting object.
+  - `newrelic_account_id` (`string`): NewRelic Account ID for streaming metrics When `null`, the `newrelic_account_id` field will be omitted from the resulting object.
+  - `newrelic_license_key` (`string`): NewRelic license key for streaming metrics When `null`, the `newrelic_license_key` field will be omitted from the resulting object.
+  - `newrelic_region` (`string`): NewRelic region for streaming metrics, allowed values are &#34;US&#34; and &#34;EU&#34; When `null`, the `newrelic_region` field will be omitted from the resulting object.
   - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming metrics When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.
   - `splunk_token` (`string`): Splunk token for streaming metrics When `null`, the `splunk_token` field will be omitted from the resulting object.
 
