@@ -76,7 +76,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `paths_filter` (`list`): The performance replication [paths filter](https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication-terraform). Applies to performance replication secondaries only and operates in &#34;deny&#34; mode only. When `null`, the `paths_filter` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Vault Plus tier cluster which is the primary in the performance replication setup with this HCP Vault Plus tier cluster. If not specified, it is a standalone Plus tier HCP Vault cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
   - `project_id` (`string`): 
-The ID of the HCP project where the Vault cluster is located. 
+The ID of the HCP project where the Vault cluster is located.
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `proxy_endpoint` (`string`): Denotes that the cluster has a proxy endpoint. Valid options are `ENABLED`, `DISABLED`. Defaults to `DISABLED`. When `null`, the `proxy_endpoint` field will be omitted from the resulting object.
@@ -115,7 +115,7 @@ injecting into a complete block.
   - `paths_filter` (`list`): The performance replication [paths filter](https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication-terraform). Applies to performance replication secondaries only and operates in &#34;deny&#34; mode only. When `null`, the `paths_filter` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Vault Plus tier cluster which is the primary in the performance replication setup with this HCP Vault Plus tier cluster. If not specified, it is a standalone Plus tier HCP Vault cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
   - `project_id` (`string`): 
-The ID of the HCP project where the Vault cluster is located. 
+The ID of the HCP project where the Vault cluster is located.
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `proxy_endpoint` (`string`): Denotes that the cluster has a proxy endpoint. Valid options are `ENABLED`, `DISABLED`. Defaults to `DISABLED`. When `null`, the `proxy_endpoint` field will be omitted from the resulting object.
@@ -449,6 +449,16 @@ Terraform sub block.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming audit logs When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming audit logs When `null`, the `grafana_user` field will be omitted from the resulting object.
+  - `http_basic_password` (`string`): HTTP basic authentication password for streaming audit logs, one of the two available authentication methods, can be specified only if http_basic_user is also provided When `null`, the `http_basic_password` field will be omitted from the resulting object.
+  - `http_basic_user` (`string`): HTTP basic authentication username for streaming audit logs, one of the two available authentication methods, can be specified only if http_basic_password is also provided When `null`, the `http_basic_user` field will be omitted from the resulting object.
+  - `http_bearer_token` (`string`): HTTP bearer authentication token for streaming audit logs, one of the two available authentication methods, can be specified only if http_basic_user and http_basic_password are not provided When `null`, the `http_bearer_token` field will be omitted from the resulting object.
+  - `http_codec` (`string`): HTTP codec for streaming audit logs, allowed values are JSON and NDJSON When `null`, the `http_codec` field will be omitted from the resulting object.
+  - `http_compression` (`bool`): HTTP compression flag for streaming audit logs When `null`, the `http_compression` field will be omitted from the resulting object.
+  - `http_headers` (`obj`): HTTP headers for streaming audit logs When `null`, the `http_headers` field will be omitted from the resulting object.
+  - `http_method` (`string`): HTTP payload method for streaming audit logs, , allowed values are PATCH, POST, or PUT When `null`, the `http_method` field will be omitted from the resulting object.
+  - `http_payload_prefix` (`string`): HTTP payload prefix for streaming audit logs When `null`, the `http_payload_prefix` field will be omitted from the resulting object.
+  - `http_payload_suffix` (`string`): HTTP payload suffix for streaming audit logs When `null`, the `http_payload_suffix` field will be omitted from the resulting object.
+  - `http_uri` (`string`): HTTP URI for streaming audit logs When `null`, the `http_uri` field will be omitted from the resulting object.
   - `newrelic_account_id` (`string`): NewRelic Account ID for streaming audit logs When `null`, the `newrelic_account_id` field will be omitted from the resulting object.
   - `newrelic_license_key` (`string`): NewRelic license key for streaming audit logs When `null`, the `newrelic_license_key` field will be omitted from the resulting object.
   - `newrelic_region` (`string`): NewRelic region for streaming audit logs, allowed values are &#34;US&#34; and &#34;EU&#34; When `null`, the `newrelic_region` field will be omitted from the resulting object.
@@ -512,6 +522,16 @@ Terraform sub block.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming metrics When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming metrics When `null`, the `grafana_user` field will be omitted from the resulting object.
+  - `http_basic_password` (`string`): HTTP basic authentication password for streaming metrics, one of the two available authentication methods, can be specified only if http_basic_user is also specified When `null`, the `http_basic_password` field will be omitted from the resulting object.
+  - `http_basic_user` (`string`): HTTP basic authentication username for streaming metrics, one of the two available authentication methods, can be specified only if http_basic_password is also specified When `null`, the `http_basic_user` field will be omitted from the resulting object.
+  - `http_bearer_token` (`string`): HTTP bearer authentication token for streaming metrics, one of the two available authentication methods, can be specified only if http_basic_user and http_basic_password are not provided When `null`, the `http_bearer_token` field will be omitted from the resulting object.
+  - `http_codec` (`string`): HTTP codec for streaming metrics, allowed values are JSON and NDJSON When `null`, the `http_codec` field will be omitted from the resulting object.
+  - `http_compression` (`bool`): HTTP compression flag for streaming metrics When `null`, the `http_compression` field will be omitted from the resulting object.
+  - `http_headers` (`obj`): HTTP headers for streaming metrics When `null`, the `http_headers` field will be omitted from the resulting object.
+  - `http_method` (`string`): HTTP payload method for streaming metrics, allowed values are PATCH, POST, or PUT When `null`, the `http_method` field will be omitted from the resulting object.
+  - `http_payload_prefix` (`string`): HTTP payload prefix for streaming metrics When `null`, the `http_payload_prefix` field will be omitted from the resulting object.
+  - `http_payload_suffix` (`string`): HTTP payload suffix for streaming metrics When `null`, the `http_payload_suffix` field will be omitted from the resulting object.
+  - `http_uri` (`string`): HTTP URI for streaming metrics When `null`, the `http_uri` field will be omitted from the resulting object.
   - `newrelic_account_id` (`string`): NewRelic Account ID for streaming metrics When `null`, the `newrelic_account_id` field will be omitted from the resulting object.
   - `newrelic_license_key` (`string`): NewRelic license key for streaming metrics When `null`, the `newrelic_license_key` field will be omitted from the resulting object.
   - `newrelic_region` (`string`): NewRelic region for streaming metrics, allowed values are &#34;US&#34; and &#34;EU&#34; When `null`, the `newrelic_region` field will be omitted from the resulting object.

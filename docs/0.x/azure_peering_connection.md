@@ -15,6 +15,7 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withAllowForwardedTraffic()`](#fn-withallowforwardedtraffic)
 * [`fn withHvnLink()`](#fn-withhvnlink)
 * [`fn withPeerResourceGroupName()`](#fn-withpeerresourcegroupname)
 * [`fn withPeerSubscriptionId()`](#fn-withpeersubscriptionid)
@@ -24,6 +25,7 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withPeeringId()`](#fn-withpeeringid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withUseRemoteGateways()`](#fn-withuseremotegateways)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -56,6 +58,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
+  - `allow_forwarded_traffic` (`bool`): Whether the forwarded traffic originating from the peered VNet is allowed in the HVN When `null`, the `allow_forwarded_traffic` field will be omitted from the resulting object.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `peer_resource_group_name` (`string`): The resource group name of the peer VNet in Azure.
   - `peer_subscription_id` (`string`): The subscription ID of the peer VNet in Azure.
@@ -63,6 +66,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `peer_vnet_name` (`string`): The name of the peer VNet in Azure.
   - `peer_vnet_region` (`string`): The region of the peer VNet in Azure.
   - `peering_id` (`string`): The ID of the peering connection.
+  - `use_remote_gateways` (`bool`): If the HVN should use the gateway of the peered VNet When `null`, the `use_remote_gateways` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.azure_peering_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -87,6 +91,7 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
+  - `allow_forwarded_traffic` (`bool`): Whether the forwarded traffic originating from the peered VNet is allowed in the HVN When `null`, the `allow_forwarded_traffic` field will be omitted from the resulting object.
   - `hvn_link` (`string`): The `self_link` of the HashiCorp Virtual Network (HVN).
   - `peer_resource_group_name` (`string`): The resource group name of the peer VNet in Azure.
   - `peer_subscription_id` (`string`): The subscription ID of the peer VNet in Azure.
@@ -94,10 +99,27 @@ injecting into a complete block.
   - `peer_vnet_name` (`string`): The name of the peer VNet in Azure.
   - `peer_vnet_region` (`string`): The region of the peer VNet in Azure.
   - `peering_id` (`string`): The ID of the peering connection.
+  - `use_remote_gateways` (`bool`): If the HVN should use the gateway of the peered VNet When `null`, the `use_remote_gateways` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.azure_peering_connection.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `azure_peering_connection` resource into the root Terraform configuration.
+
+
+### fn withAllowForwardedTraffic
+
+```ts
+withAllowForwardedTraffic()
+```
+
+`hcp.bool.withAllowForwardedTraffic` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the allow_forwarded_traffic field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `allow_forwarded_traffic` field.
 
 
 ### fn withHvnLink
@@ -246,6 +268,22 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+### fn withUseRemoteGateways
+
+```ts
+withUseRemoteGateways()
+```
+
+`hcp.bool.withUseRemoteGateways` constructs a mixin object that can be merged into the `bool`
+Terraform resource block to set or update the use_remote_gateways field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`bool`): The value to set for the `use_remote_gateways` field.
 
 
 ## obj timeouts
