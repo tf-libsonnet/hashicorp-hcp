@@ -19,6 +19,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAuditLogConfigMixin()`](#fn-withauditlogconfigmixin)
 * [`fn withClusterId()`](#fn-withclusterid)
 * [`fn withHvnId()`](#fn-withhvnid)
+* [`fn withIpAllowlist()`](#fn-withipallowlist)
+* [`fn withIpAllowlistMixin()`](#fn-withipallowlistmixin)
 * [`fn withMajorVersionUpgradeConfig()`](#fn-withmajorversionupgradeconfig)
 * [`fn withMajorVersionUpgradeConfigMixin()`](#fn-withmajorversionupgradeconfigmixin)
 * [`fn withMetricsConfig()`](#fn-withmetricsconfig)
@@ -34,6 +36,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj audit_log_config`](#obj-audit_log_config)
   * [`fn new()`](#fn-audit_log_confignew)
+* [`obj ip_allowlist`](#obj-ip_allowlist)
+  * [`fn new()`](#fn-ip_allowlistnew)
 * [`obj major_version_upgrade_config`](#obj-major_version_upgrade_config)
   * [`fn new()`](#fn-major_version_upgrade_confignew)
 * [`obj metrics_config`](#obj-metrics_config)
@@ -83,6 +87,7 @@ If a project is not configured in the HCP Provider config block, the oldest proj
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
+  - `ip_allowlist` (`list[obj]`): Allowed IPV4 address ranges (CIDRs) for inbound traffic. Each entry must be a unique CIDR. Maximum 50 CIDRS supported at this time. When `null`, the `ip_allowlist` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.ip_allowlist.new](#fn-ip_allowlistnew) constructor.
   - `major_version_upgrade_config` (`list[obj]`): The Major Version Upgrade configuration. When `null`, the `major_version_upgrade_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.major_version_upgrade_config.new](#fn-major_version_upgrade_confignew) constructor.
   - `metrics_config` (`list[obj]`): The metrics configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `metrics_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.metrics_config.new](#fn-metrics_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -122,6 +127,7 @@ If a project is not configured in the HCP Provider config block, the oldest proj
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
+  - `ip_allowlist` (`list[obj]`): Allowed IPV4 address ranges (CIDRs) for inbound traffic. Each entry must be a unique CIDR. Maximum 50 CIDRS supported at this time. When `null`, the `ip_allowlist` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.ip_allowlist.new](#fn-ip_allowlistnew) constructor.
   - `major_version_upgrade_config` (`list[obj]`): The Major Version Upgrade configuration. When `null`, the `major_version_upgrade_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.major_version_upgrade_config.new](#fn-major_version_upgrade_confignew) constructor.
   - `metrics_config` (`list[obj]`): The metrics configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `metrics_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.metrics_config.new](#fn-metrics_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -197,6 +203,43 @@ Terraform resource block to set or update the hvn_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `hvn_id` field.
+
+
+### fn withIpAllowlist
+
+```ts
+withIpAllowlist()
+```
+
+`hcp.list[obj].withIpAllowlist` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the ip_allowlist field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [hcp.list[obj].withIpAllowlistMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `ip_allowlist` field.
+
+
+### fn withIpAllowlistMixin
+
+```ts
+withIpAllowlistMixin()
+```
+
+`hcp.list[obj].withIpAllowlistMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the ip_allowlist field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [hcp.list[obj].withIpAllowlist](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `ip_allowlist` field.
 
 
 ### fn withMajorVersionUpgradeConfig
@@ -467,6 +510,30 @@ Terraform sub block.
 
 **Returns**:
   - An attribute object that represents the `audit_log_config` sub block.
+
+
+## obj ip_allowlist
+
+
+
+### fn ip_allowlist.new
+
+```ts
+new()
+```
+
+
+`hcp.vault_cluster.ip_allowlist.new` constructs a new object with attributes and blocks configured for the `ip_allowlist`
+Terraform sub block.
+
+
+
+**Args**:
+  - `address` (`string`): IP address range in CIDR notation.
+  - `description` (`string`): Description to help identify source (maximum 255 chars). When `null`, the `description` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `ip_allowlist` sub block.
 
 
 ## obj major_version_upgrade_config
