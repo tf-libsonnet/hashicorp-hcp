@@ -8,7 +8,7 @@ permalink: /service_principal_key/
 
 The service principal key resource manages a service principal key.
 
-The user or service account that is running Terraform when creating a `hcp_service_principal_key` resource must have `roles/Admin` on the parent resource; either the project or organization.
+The user or service account that is running Terraform when creating a `hcp_service_principal_key` resource must have `roles/admin` on the parent resource; either the project or organization.
 
 This package contains functions and utilities for setting up the resource using Jsonnet code.
 

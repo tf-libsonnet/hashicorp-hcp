@@ -15,6 +15,8 @@ This package contains functions and utilities for setting up the resource using 
 
 * [`fn new()`](#fn-new)
 * [`fn newAttrs()`](#fn-newattrs)
+* [`fn withAzureConfig()`](#fn-withazureconfig)
+* [`fn withAzureConfigMixin()`](#fn-withazureconfigmixin)
 * [`fn withDestinationCidr()`](#fn-withdestinationcidr)
 * [`fn withHvnLink()`](#fn-withhvnlink)
 * [`fn withHvnRouteId()`](#fn-withhvnrouteid)
@@ -22,6 +24,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTargetLink()`](#fn-withtargetlink)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`obj azure_config`](#obj-azure_config)
+  * [`fn new()`](#fn-azure_confignew)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -59,6 +63,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `hvn_route_id` (`string`): The ID of the HVN route.
   - `project_id` (`string`): The ID of the HCP project where the HVN route is located. Always matches the project ID in `hvn_link`. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `target_link` (`string`): A unique URL identifying the target of the HVN route. Examples of the target: [`aws_network_peering`](aws_network_peering.md), [`aws_transit_gateway_attachment`](aws_transit_gateway_attachment.md)
+  - `azure_config` (`list[obj]`): The Azure configuration for routing. When `null`, the `azure_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.azure_config.new](#fn-azure_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -88,10 +93,48 @@ injecting into a complete block.
   - `hvn_route_id` (`string`): The ID of the HVN route.
   - `project_id` (`string`): The ID of the HCP project where the HVN route is located. Always matches the project ID in `hvn_link`. Setting this attribute is deprecated, but it will remain usable in read-only form. When `null`, the `project_id` field will be omitted from the resulting object.
   - `target_link` (`string`): A unique URL identifying the target of the HVN route. Examples of the target: [`aws_network_peering`](aws_network_peering.md), [`aws_transit_gateway_attachment`](aws_transit_gateway_attachment.md)
+  - `azure_config` (`list[obj]`): The Azure configuration for routing. When `null`, the `azure_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.azure_config.new](#fn-azure_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.hvn_route.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
   - An attribute object that can be used with [tf.withResource](https://github.com/tf-libsonnet/core/tree/main/docs#fn-withresource) to construct a new `hvn_route` resource into the root Terraform configuration.
+
+
+### fn withAzureConfig
+
+```ts
+withAzureConfig()
+```
+
+`hcp.list[obj].withAzureConfig` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the azure_config field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [hcp.list[obj].withAzureConfigMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `azure_config` field.
+
+
+### fn withAzureConfigMixin
+
+```ts
+withAzureConfigMixin()
+```
+
+`hcp.list[obj].withAzureConfigMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the azure_config field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [hcp.list[obj].withAzureConfig](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `azure_config` field.
 
 
 ### fn withDestinationCidr
@@ -208,6 +251,30 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+## obj azure_config
+
+
+
+### fn azure_config.new
+
+```ts
+new()
+```
+
+
+`hcp.hvn_route.azure_config.new` constructs a new object with attributes and blocks configured for the `azure_config`
+Terraform sub block.
+
+
+
+**Args**:
+  - `next_hop_ip_address` (`string`): Contains the IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VIRTUAL_APPLIANCE. When `null`, the `next_hop_ip_address` field will be omitted from the resulting object.
+  - `next_hop_type` (`string`): The type of Azure hop the packet should be sent to. Valid options for Next Hop Type - `VIRTUAL_APPLIANCE` or `VIRTUAL_NETWORK_GATEWAY`
+
+**Returns**:
+  - An attribute object that represents the `azure_config` sub block.
 
 
 ## obj timeouts

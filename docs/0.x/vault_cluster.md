@@ -19,6 +19,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withAuditLogConfigMixin()`](#fn-withauditlogconfigmixin)
 * [`fn withClusterId()`](#fn-withclusterid)
 * [`fn withHvnId()`](#fn-withhvnid)
+* [`fn withIpAllowlist()`](#fn-withipallowlist)
+* [`fn withIpAllowlistMixin()`](#fn-withipallowlistmixin)
 * [`fn withMajorVersionUpgradeConfig()`](#fn-withmajorversionupgradeconfig)
 * [`fn withMajorVersionUpgradeConfigMixin()`](#fn-withmajorversionupgradeconfigmixin)
 * [`fn withMetricsConfig()`](#fn-withmetricsconfig)
@@ -34,6 +36,8 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
 * [`obj audit_log_config`](#obj-audit_log_config)
   * [`fn new()`](#fn-audit_log_confignew)
+* [`obj ip_allowlist`](#obj-ip_allowlist)
+  * [`fn new()`](#fn-ip_allowlistnew)
 * [`obj major_version_upgrade_config`](#obj-major_version_upgrade_config)
   * [`fn new()`](#fn-major_version_upgrade_confignew)
 * [`obj metrics_config`](#obj-metrics_config)
@@ -76,13 +80,14 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
   - `paths_filter` (`list`): The performance replication [paths filter](https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication-terraform). Applies to performance replication secondaries only and operates in &#34;deny&#34; mode only. When `null`, the `paths_filter` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Vault Plus tier cluster which is the primary in the performance replication setup with this HCP Vault Plus tier cluster. If not specified, it is a standalone Plus tier HCP Vault cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
   - `project_id` (`string`): 
-The ID of the HCP project where the Vault cluster is located. 
+The ID of the HCP project where the Vault cluster is located.
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `proxy_endpoint` (`string`): Denotes that the cluster has a proxy endpoint. Valid options are `ENABLED`, `DISABLED`. Defaults to `DISABLED`. When `null`, the `proxy_endpoint` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
+  - `ip_allowlist` (`list[obj]`): Allowed IPV4 address ranges (CIDRs) for inbound traffic. Each entry must be a unique CIDR. Maximum 50 CIDRS supported at this time. When `null`, the `ip_allowlist` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.ip_allowlist.new](#fn-ip_allowlistnew) constructor.
   - `major_version_upgrade_config` (`list[obj]`): The Major Version Upgrade configuration. When `null`, the `major_version_upgrade_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.major_version_upgrade_config.new](#fn-major_version_upgrade_confignew) constructor.
   - `metrics_config` (`list[obj]`): The metrics configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `metrics_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.metrics_config.new](#fn-metrics_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -115,13 +120,14 @@ injecting into a complete block.
   - `paths_filter` (`list`): The performance replication [paths filter](https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication-terraform). Applies to performance replication secondaries only and operates in &#34;deny&#34; mode only. When `null`, the `paths_filter` field will be omitted from the resulting object.
   - `primary_link` (`string`): The `self_link` of the HCP Vault Plus tier cluster which is the primary in the performance replication setup with this HCP Vault Plus tier cluster. If not specified, it is a standalone Plus tier HCP Vault cluster. When `null`, the `primary_link` field will be omitted from the resulting object.
   - `project_id` (`string`): 
-The ID of the HCP project where the Vault cluster is located. 
+The ID of the HCP project where the Vault cluster is located.
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
   - `proxy_endpoint` (`string`): Denotes that the cluster has a proxy endpoint. Valid options are `ENABLED`, `DISABLED`. Defaults to `DISABLED`. When `null`, the `proxy_endpoint` field will be omitted from the resulting object.
   - `public_endpoint` (`bool`): Denotes that the cluster has a public endpoint. Defaults to false. When `null`, the `public_endpoint` field will be omitted from the resulting object.
   - `tier` (`string`): Tier of the HCP Vault cluster. Valid options for tiers - `dev`, `starter_small`, `standard_small`, `standard_medium`, `standard_large`, `plus_small`, `plus_medium`, `plus_large`. See [pricing information](https://www.hashicorp.com/products/vault/pricing). Changing a cluster&#39;s size or tier is only available to admins. See [Scale a cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/guides/vault-scaling). When `null`, the `tier` field will be omitted from the resulting object.
   - `audit_log_config` (`list[obj]`): The audit logs configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `audit_log_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.audit_log_config.new](#fn-audit_log_confignew) constructor.
+  - `ip_allowlist` (`list[obj]`): Allowed IPV4 address ranges (CIDRs) for inbound traffic. Each entry must be a unique CIDR. Maximum 50 CIDRS supported at this time. When `null`, the `ip_allowlist` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.ip_allowlist.new](#fn-ip_allowlistnew) constructor.
   - `major_version_upgrade_config` (`list[obj]`): The Major Version Upgrade configuration. When `null`, the `major_version_upgrade_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.major_version_upgrade_config.new](#fn-major_version_upgrade_confignew) constructor.
   - `metrics_config` (`list[obj]`): The metrics configuration for export. (https://developer.hashicorp.com/vault/tutorials/cloud-monitoring/vault-metrics-guide#metrics-streaming-configuration) When `null`, the `metrics_config` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.metrics_config.new](#fn-metrics_confignew) constructor.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.vault_cluster.timeouts.new](#fn-timeoutsnew) constructor.
@@ -197,6 +203,43 @@ Terraform resource block to set or update the hvn_id field.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`string`): The value to set for the `hvn_id` field.
+
+
+### fn withIpAllowlist
+
+```ts
+withIpAllowlist()
+```
+
+`hcp.list[obj].withIpAllowlist` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the ip_allowlist field.
+
+This function will replace the array with the passed in `value`. If you wish to instead append the
+passed in value to the existing array, use the [hcp.list[obj].withIpAllowlistMixin](TODO) function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `ip_allowlist` field.
+
+
+### fn withIpAllowlistMixin
+
+```ts
+withIpAllowlistMixin()
+```
+
+`hcp.list[obj].withIpAllowlistMixin` constructs a mixin object that can be merged into the `list[obj]`
+Terraform resource block to set or update the ip_allowlist field.
+
+This function will append the passed in array or object to the existing array. If you wish
+to instead replace the array with the passed in `value`, use the [hcp.list[obj].withIpAllowlist](TODO)
+function.
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`list[obj]`): The value to set for the `ip_allowlist` field.
 
 
 ### fn withMajorVersionUpgradeConfig
@@ -449,11 +492,48 @@ Terraform sub block.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming audit logs When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming audit logs When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming audit logs When `null`, the `grafana_user` field will be omitted from the resulting object.
+  - `http_basic_password` (`string`): HTTP basic authentication password for streaming audit logs, one of the two available authentication methods, can be specified only if http_basic_user is also provided When `null`, the `http_basic_password` field will be omitted from the resulting object.
+  - `http_basic_user` (`string`): HTTP basic authentication username for streaming audit logs, one of the two available authentication methods, can be specified only if http_basic_password is also provided When `null`, the `http_basic_user` field will be omitted from the resulting object.
+  - `http_bearer_token` (`string`): HTTP bearer authentication token for streaming audit logs, one of the two available authentication methods, can be specified only if http_basic_user and http_basic_password are not provided When `null`, the `http_bearer_token` field will be omitted from the resulting object.
+  - `http_codec` (`string`): HTTP codec for streaming audit logs, allowed values are JSON and NDJSON When `null`, the `http_codec` field will be omitted from the resulting object.
+  - `http_compression` (`bool`): HTTP compression flag for streaming audit logs When `null`, the `http_compression` field will be omitted from the resulting object.
+  - `http_headers` (`obj`): HTTP headers for streaming audit logs When `null`, the `http_headers` field will be omitted from the resulting object.
+  - `http_method` (`string`): HTTP payload method for streaming audit logs, , allowed values are PATCH, POST, or PUT When `null`, the `http_method` field will be omitted from the resulting object.
+  - `http_payload_prefix` (`string`): HTTP payload prefix for streaming audit logs When `null`, the `http_payload_prefix` field will be omitted from the resulting object.
+  - `http_payload_suffix` (`string`): HTTP payload suffix for streaming audit logs When `null`, the `http_payload_suffix` field will be omitted from the resulting object.
+  - `http_uri` (`string`): HTTP URI for streaming audit logs When `null`, the `http_uri` field will be omitted from the resulting object.
+  - `newrelic_account_id` (`string`): NewRelic Account ID for streaming audit logs When `null`, the `newrelic_account_id` field will be omitted from the resulting object.
+  - `newrelic_license_key` (`string`): NewRelic license key for streaming audit logs When `null`, the `newrelic_license_key` field will be omitted from the resulting object.
+  - `newrelic_region` (`string`): NewRelic region for streaming audit logs, allowed values are &#34;US&#34; and &#34;EU&#34; When `null`, the `newrelic_region` field will be omitted from the resulting object.
   - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming audit logs When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.
   - `splunk_token` (`string`): Splunk token for streaming audit logs When `null`, the `splunk_token` field will be omitted from the resulting object.
 
 **Returns**:
   - An attribute object that represents the `audit_log_config` sub block.
+
+
+## obj ip_allowlist
+
+
+
+### fn ip_allowlist.new
+
+```ts
+new()
+```
+
+
+`hcp.vault_cluster.ip_allowlist.new` constructs a new object with attributes and blocks configured for the `ip_allowlist`
+Terraform sub block.
+
+
+
+**Args**:
+  - `address` (`string`): IP address range in CIDR notation.
+  - `description` (`string`): Description to help identify source (maximum 255 chars). When `null`, the `description` field will be omitted from the resulting object.
+
+**Returns**:
+  - An attribute object that represents the `ip_allowlist` sub block.
 
 
 ## obj major_version_upgrade_config
@@ -509,6 +589,19 @@ Terraform sub block.
   - `grafana_endpoint` (`string`): Grafana endpoint for streaming metrics When `null`, the `grafana_endpoint` field will be omitted from the resulting object.
   - `grafana_password` (`string`): Grafana password for streaming metrics When `null`, the `grafana_password` field will be omitted from the resulting object.
   - `grafana_user` (`string`): Grafana user for streaming metrics When `null`, the `grafana_user` field will be omitted from the resulting object.
+  - `http_basic_password` (`string`): HTTP basic authentication password for streaming metrics, one of the two available authentication methods, can be specified only if http_basic_user is also specified When `null`, the `http_basic_password` field will be omitted from the resulting object.
+  - `http_basic_user` (`string`): HTTP basic authentication username for streaming metrics, one of the two available authentication methods, can be specified only if http_basic_password is also specified When `null`, the `http_basic_user` field will be omitted from the resulting object.
+  - `http_bearer_token` (`string`): HTTP bearer authentication token for streaming metrics, one of the two available authentication methods, can be specified only if http_basic_user and http_basic_password are not provided When `null`, the `http_bearer_token` field will be omitted from the resulting object.
+  - `http_codec` (`string`): HTTP codec for streaming metrics, allowed values are JSON and NDJSON When `null`, the `http_codec` field will be omitted from the resulting object.
+  - `http_compression` (`bool`): HTTP compression flag for streaming metrics When `null`, the `http_compression` field will be omitted from the resulting object.
+  - `http_headers` (`obj`): HTTP headers for streaming metrics When `null`, the `http_headers` field will be omitted from the resulting object.
+  - `http_method` (`string`): HTTP payload method for streaming metrics, allowed values are PATCH, POST, or PUT When `null`, the `http_method` field will be omitted from the resulting object.
+  - `http_payload_prefix` (`string`): HTTP payload prefix for streaming metrics When `null`, the `http_payload_prefix` field will be omitted from the resulting object.
+  - `http_payload_suffix` (`string`): HTTP payload suffix for streaming metrics When `null`, the `http_payload_suffix` field will be omitted from the resulting object.
+  - `http_uri` (`string`): HTTP URI for streaming metrics When `null`, the `http_uri` field will be omitted from the resulting object.
+  - `newrelic_account_id` (`string`): NewRelic Account ID for streaming metrics When `null`, the `newrelic_account_id` field will be omitted from the resulting object.
+  - `newrelic_license_key` (`string`): NewRelic license key for streaming metrics When `null`, the `newrelic_license_key` field will be omitted from the resulting object.
+  - `newrelic_region` (`string`): NewRelic region for streaming metrics, allowed values are &#34;US&#34; and &#34;EU&#34; When `null`, the `newrelic_region` field will be omitted from the resulting object.
   - `splunk_hecendpoint` (`string`): Splunk endpoint for streaming metrics When `null`, the `splunk_hecendpoint` field will be omitted from the resulting object.
   - `splunk_token` (`string`): Splunk token for streaming metrics When `null`, the `splunk_token` field will be omitted from the resulting object.
 
