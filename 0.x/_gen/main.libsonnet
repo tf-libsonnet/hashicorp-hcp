@@ -14,6 +14,7 @@ local d = (import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet');
   hvn_route: (import 'resources/hvn_route.libsonnet'),
   iam_workload_identity_provider: (import 'resources/iam_workload_identity_provider.libsonnet'),
   log_streaming_destination: (import 'resources/log_streaming_destination.libsonnet'),
+  notifications_webhook: (import 'resources/notifications_webhook.libsonnet'),
   organization_iam_binding: (import 'resources/organization_iam_binding.libsonnet'),
   organization_iam_policy: (import 'resources/organization_iam_policy.libsonnet'),
   packer_channel: (import 'resources/packer_channel.libsonnet'),

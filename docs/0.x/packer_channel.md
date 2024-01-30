@@ -53,7 +53,7 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `bucket_name` (`string`): The slug of the HCP Packer Registry bucket where the channel should be created.
+  - `bucket_name` (`string`): The name of the HCP Packer Registry bucket where the channel should be created.
   - `name` (`string`): The name of the channel being managed.
   - `project_id` (`string`): 
 The ID of the HCP project where this channel is located. 
@@ -84,7 +84,7 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `bucket_name` (`string`): The slug of the HCP Packer Registry bucket where the channel should be created.
+  - `bucket_name` (`string`): The name of the HCP Packer Registry bucket where the channel should be created.
   - `name` (`string`): The name of the channel being managed.
   - `project_id` (`string`): 
 The ID of the HCP project where this channel is located. 

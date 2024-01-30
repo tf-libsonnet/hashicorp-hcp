@@ -24,6 +24,7 @@ project.
 * [hvn_route](hvn_route.md)
 * [iam_workload_identity_provider](iam_workload_identity_provider.md)
 * [log_streaming_destination](log_streaming_destination.md)
+* [notifications_webhook](notifications_webhook.md)
 * [organization_iam_binding](organization_iam_binding.md)
 * [organization_iam_policy](organization_iam_policy.md)
 * [packer_channel](packer_channel.md)

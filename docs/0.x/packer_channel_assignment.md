@@ -6,7 +6,7 @@ permalink: /packer_channel_assignment/
 
 `packer_channel_assignment` represents the `hcp_packer_channel_assignment` Terraform resource.
 
-The Packer Channel Assignment resource allows you to manage the iteration assigned to a bucket channel in an active HCP Packer Registry.
+The Packer Channel Assignment resource allows you to manage the version assigned to a channel in an active HCP Packer Registry.
 
 This package contains functions and utilities for setting up the resource using Jsonnet code.
 
@@ -18,11 +18,10 @@ This package contains functions and utilities for setting up the resource using 
 * [`fn withBucketName()`](#fn-withbucketname)
 * [`fn withChannelName()`](#fn-withchannelname)
 * [`fn withIterationFingerprint()`](#fn-withiterationfingerprint)
-* [`fn withIterationId()`](#fn-withiterationid)
-* [`fn withIterationVersion()`](#fn-withiterationversion)
 * [`fn withProjectId()`](#fn-withprojectid)
 * [`fn withTimeouts()`](#fn-withtimeouts)
 * [`fn withTimeoutsMixin()`](#fn-withtimeoutsmixin)
+* [`fn withVersionFingerprint()`](#fn-withversionfingerprint)
 * [`obj timeouts`](#obj-timeouts)
   * [`fn new()`](#fn-timeoutsnew)
 
@@ -55,15 +54,14 @@ or `$` to refer to the root object. Instead, make an explicit outer object using
 
 **Args**:
   - `resourceLabel` (`string`): The name label of the block.
-  - `bucket_name` (`string`): The slug of the HCP Packer Registry bucket where the channel is located.
+  - `bucket_name` (`string`): The slug of the HCP Packer bucket where the channel is located.
   - `channel_name` (`string`): The name of the HCP Packer channel being managed.
-  - `iteration_fingerprint` (`string`): The fingerprint of the iteration assigned to the channel. When `null`, the `iteration_fingerprint` field will be omitted from the resulting object.
-  - `iteration_id` (`string`): The ID of the iteration assigned to the channel. When `null`, the `iteration_id` field will be omitted from the resulting object.
-  - `iteration_version` (`number`): The incremental version of the iteration assigned to the channel. When `null`, the `iteration_version` field will be omitted from the resulting object.
+  - `iteration_fingerprint` (`string`): The fingerprint of the version assigned to the channel. When `null`, the `iteration_fingerprint` field will be omitted from the resulting object.
   - `project_id` (`string`): 
 The ID of the HCP project where the channel is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `version_fingerprint` (`string`): The fingerprint of the version assigned to the channel. When `null`, the `version_fingerprint` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting resource block. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel_assignment.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -88,15 +86,14 @@ This is most useful when you need to preprocess the attributes with functions, c
 injecting into a complete block.
 
 **Args**:
-  - `bucket_name` (`string`): The slug of the HCP Packer Registry bucket where the channel is located.
+  - `bucket_name` (`string`): The slug of the HCP Packer bucket where the channel is located.
   - `channel_name` (`string`): The name of the HCP Packer channel being managed.
-  - `iteration_fingerprint` (`string`): The fingerprint of the iteration assigned to the channel. When `null`, the `iteration_fingerprint` field will be omitted from the resulting object.
-  - `iteration_id` (`string`): The ID of the iteration assigned to the channel. When `null`, the `iteration_id` field will be omitted from the resulting object.
-  - `iteration_version` (`number`): The incremental version of the iteration assigned to the channel. When `null`, the `iteration_version` field will be omitted from the resulting object.
+  - `iteration_fingerprint` (`string`): The fingerprint of the version assigned to the channel. When `null`, the `iteration_fingerprint` field will be omitted from the resulting object.
   - `project_id` (`string`): 
 The ID of the HCP project where the channel is located. 
 If not specified, the project specified in the HCP Provider config block will be used, if configured.
 If a project is not configured in the HCP Provider config block, the oldest project in the organization will be used. When `null`, the `project_id` field will be omitted from the resulting object.
+  - `version_fingerprint` (`string`): The fingerprint of the version assigned to the channel. When `null`, the `version_fingerprint` field will be omitted from the resulting object.
   - `timeouts` (`obj`): Set the `timeouts` field on the resulting object. When `null`, the `timeouts` sub block will be omitted from the resulting object. When setting the sub block, it is recommended to construct the object using the [hcp.packer_channel_assignment.timeouts.new](#fn-timeoutsnew) constructor.
 
 **Returns**:
@@ -151,38 +148,6 @@ Terraform resource block to set or update the iteration_fingerprint field.
   - `value` (`string`): The value to set for the `iteration_fingerprint` field.
 
 
-### fn withIterationId
-
-```ts
-withIterationId()
-```
-
-`hcp.string.withIterationId` constructs a mixin object that can be merged into the `string`
-Terraform resource block to set or update the iteration_id field.
-
-
-
-**Args**:
-  - `resourceLabel` (`string`): The name label of the block to update.
-  - `value` (`string`): The value to set for the `iteration_id` field.
-
-
-### fn withIterationVersion
-
-```ts
-withIterationVersion()
-```
-
-`hcp.number.withIterationVersion` constructs a mixin object that can be merged into the `number`
-Terraform resource block to set or update the iteration_version field.
-
-
-
-**Args**:
-  - `resourceLabel` (`string`): The name label of the block to update.
-  - `value` (`number`): The value to set for the `iteration_version` field.
-
-
 ### fn withProjectId
 
 ```ts
@@ -233,6 +198,22 @@ function.
 **Args**:
   - `resourceLabel` (`string`): The name label of the block to update.
   - `value` (`obj`): The value to set for the `timeouts` field.
+
+
+### fn withVersionFingerprint
+
+```ts
+withVersionFingerprint()
+```
+
+`hcp.string.withVersionFingerprint` constructs a mixin object that can be merged into the `string`
+Terraform resource block to set or update the version_fingerprint field.
+
+
+
+**Args**:
+  - `resourceLabel` (`string`): The name label of the block to update.
+  - `value` (`string`): The value to set for the `version_fingerprint` field.
 
 
 ## obj timeouts
